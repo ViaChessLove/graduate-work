@@ -1,0 +1,6 @@
+- eslint
+- stylelint
+- reset css +
+- find better api
+- react-router
+- redux saga
