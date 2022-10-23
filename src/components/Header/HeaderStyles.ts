@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-
 import styled from "styled-components";
+
 import { COLORS } from "../../constants";
 
 export const HeaderWrapper = styled.header`
@@ -13,6 +13,8 @@ export const HeaderWrapper = styled.header`
   background-color: ${COLORS.oreBluishBlack};
 
   color: ${COLORS.poisonousIceCream};
+  
+  z-index: 1;
 `;
 
 export const HeaderContent = styled.nav`
@@ -36,7 +38,6 @@ export const HeaderRoutes = styled.div`
   width: 150px;
 `;
 
-// TODO: заменить на Link react-router'а
 export const HeaderRoute = styled(Link)`
   color: inherit;
 

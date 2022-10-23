@@ -1,13 +1,34 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
-import { selectCoins } from '../../redux/CoinSlice';
+import { useLayoutEffect } from 'react';
+import {
+  useDispatch,
+  useSelector,
+} from 'react-redux';
+import CoinsList from '../../components/CoinsList';
 
+import {
+  getCoins,
+  makeSelectIsLoading,
+} from '../../redux/CoinSlice';
 
 const Coins = () => {
-  console.log(useSelector(selectCoins))
+  const dispatch = useDispatch();
+
+  const isLoading = useSelector(makeSelectIsLoading);
+
+  useLayoutEffect(() => {
+    dispatch(getCoins());
+  }, [dispatch]);
+
   return (
     <>
-      Coins q
+      {isLoading && (
+        <>
+          Loading ...
+        </>
+      )}
+      {!isLoading && (
+        <CoinsList />
+      )}
     </>
   )
 }

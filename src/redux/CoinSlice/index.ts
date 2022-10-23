@@ -1,3 +1,4 @@
+import { createDraftSafeSelector } from '@reduxjs/toolkit';
 import {
   createSlice,
   PayloadAction,
@@ -5,16 +6,39 @@ import {
 
 const initialState: any = {
   coins: [],
+  isLoading: true,
 }
 
 export const coinsSlice = createSlice({
   name: 'coins',
   initialState,
   reducers: {
+    getCoins: (state: any) => {
+      state.isLoading = true;
+    },
+    getCoinsResponse: (state: any, action: PayloadAction) => {
+      state.coins = action.payload;
+      state.isLoading = false;
+    },
   },
 });
 
-export const selectCoins = ({ coins: any }) => coins;
+export const coinsSelectorProvider = (state: any) => state.coins;
 
-export const { } = coinsSlice.actions;
+export const makeSelectCoinsSlice = createDraftSafeSelector(
+  coinsSelectorProvider,
+  (subState) => subState.coins,
+)
+
+export const makeSelectCoinsSliceCoins = createDraftSafeSelector(
+  makeSelectCoinsSlice,
+  (subState) => subState?.data?.coins,
+)
+
+export const makeSelectIsLoading = createDraftSafeSelector(
+  coinsSelectorProvider,
+  (subState) => subState.isLoading,
+)
+
+export const { getCoins, getCoinsResponse } = coinsSlice.actions;
 export default coinsSlice.reducer;

@@ -6,3 +6,10 @@ export interface PlaceholderProps {
 export interface H1Props {
   marginBottom?: string;
 }
+
+export interface CoinsListProps {
+  name: string,
+  price: number,
+  btcPrice: number,
+  iconUrl: string,
+}

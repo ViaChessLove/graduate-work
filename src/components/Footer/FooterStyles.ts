@@ -2,11 +2,11 @@ import styled from "styled-components";
 import { COLORS } from "../../constants";
 
 export const FooterWrapper = styled.footer`
-  position: absolute;
+  position: fixed;
   bottom: 0;
   
   width: 100%;
-  height: 80px;
+  height: 60px;
 
   background-color: ${COLORS.stegadonScaleGreen};
 
@@ -21,7 +21,7 @@ export const FooterContainer = styled.div`
   flex-flow: column nowrap;
 
   margin: 0 auto;
-  padding-top: 20px;
+  padding-top: 10px;
 
   text-align: center;
 

@@ -1,6 +1,13 @@
-- eslint
-- stylelint
 - reset css +
-- find better api
-- react-router
-- redux saga
+- find better api + 
+- react-router +
+- redux + saga +
+- find loader
+- pagination
+- types 
+- table layout 
+- search
+- graphjs
+- coin routes
+- styles
+

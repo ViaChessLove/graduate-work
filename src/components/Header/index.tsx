@@ -14,8 +14,7 @@ import { HEADER_MESSAGES } from "./messages";
 const Header = () => {
   const {
     title,
-    coins,
-    news,
+    links,
   } = HEADER_MESSAGES;
   return (
     <>
@@ -25,12 +24,11 @@ const Header = () => {
             { title }
           </H1>
           <HeaderRoutes>
-            <HeaderRoute to="/">
-              { coins }
-            </HeaderRoute>
-            <HeaderRoute to="/news">
-              { news }
-            </HeaderRoute>
+            {links.map(({ title, container}) => (
+              <HeaderRoute to={ container }>
+                { title }
+              </HeaderRoute>
+            ))}
           </HeaderRoutes>
         </HeaderContent>
       </HeaderWrapper>
