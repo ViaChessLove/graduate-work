@@ -8,7 +8,7 @@ const initialState: any = {
 }
 
 export const newsSlice = createSlice({
-  name: 'NEWS_SLICE',
+  name: 'news',
   initialState,
   reducers: {
   },

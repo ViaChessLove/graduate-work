@@ -8,11 +8,13 @@ const initialState: any = {
 }
 
 export const coinsSlice = createSlice({
-  name: 'COINS_SLICE',
+  name: 'coins',
   initialState,
   reducers: {
   },
 });
+
+export const selectCoins = ({ coins: any }) => coins;
 
 export const { } = coinsSlice.actions;
 export default coinsSlice.reducer;
