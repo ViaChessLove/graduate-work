@@ -6,8 +6,14 @@
 <div>Язык программирования: TypeScript (ES22)</div>
 <div>
   APIs documentations: 
-  1. https://rapidapi.com/Coinranking/api/coinranking1 - Coins api
-  2. https://rapidapi.com/noobbot12367/api/blockchain-news1/ - News
+  <ul>
+    <li>
+      https://rapidapi.com/Coinranking/api/coinranking1 - Coins api
+    </li>
+    <li>
+      https://rapidapi.com/noobbot12367/api/blockchain-news1/ - News
+    </li>
+  </ul>
 </div>
 <div>
 Стили: styled-components v.5.3.6
