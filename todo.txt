@@ -10,4 +10,4 @@
 - graphjs
 - coin routes
 - styles
-
+- location

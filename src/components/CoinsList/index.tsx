@@ -12,7 +12,6 @@ import {
 
 const CoinsList = () => {
   const coins: any = useSelector(makeSelectCoinsSliceCoins);
-  console.log(coins);
   return (
     <CoinsListWrapper>
       <CoinsListContainer>

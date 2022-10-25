@@ -13,3 +13,8 @@ export interface CoinsListProps {
   btcPrice: number,
   iconUrl: string,
 }
+
+export interface RouteProps {
+  path: string,
+  element: () => JSX.Element,
+}

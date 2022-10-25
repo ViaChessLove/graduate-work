@@ -58,6 +58,7 @@ export const Placeholder = styled.div`
 export const H1 = styled.h1`
   font-size: 22px;
   letter-spacing: 0.05em;
+  font-family: inherit;
   font-weight: 600;
 
   margin-bottom: ${(props: H1Props) => (props.marginBottom 

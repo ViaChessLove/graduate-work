@@ -9,8 +9,9 @@ import { ResetCSS } from "./GlobalStyles";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 
-import Coins from "./containers/Coins";
-import News from "./containers/News";
+import { routes } from './routes';
+
+import { RouteProps } from './types';
 
 const App = () => {
   return (
@@ -18,8 +19,18 @@ const App = () => {
       <ResetCSS/>
       <Header />
       <Routes>
-        <Route path="/" element={<Coins />} />
-        <Route path="/news" element={<News />} />
+        {routes
+        .map(({
+          path,
+          element,
+          }: RouteProps,
+          routeIndex) => (
+          <Route
+            key={routeIndex}
+            path={path}
+            element={element()}
+          />
+        ))}
       </Routes>
       <Footer />
     </BrowserRouter>

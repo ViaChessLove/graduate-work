@@ -10,14 +10,13 @@ import {
 } from '../../constants';
 
 import {
-
   getCoins
 } from './constants';
 import { getCoinsResponse } from '.';
 
 export function* getCoinsFromApi() {
   try {
-    const response: any = yield call(request, COINS_API, COINS_REQUEST_OPTIONS);
+    const response = yield call(request, COINS_API, COINS_REQUEST_OPTIONS);
     if (response) {
       yield put(getCoinsResponse(response))
     }

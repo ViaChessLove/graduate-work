@@ -1,15 +1,33 @@
-function parseJSON(response: any) {
+import { useNavigate } from "react-router-dom";
+
+const parseJSON = (response: any) => {
   return response.json();
 }
 
-function catchError(error: any) {
+const catchError = (error: any) => {
   console.warn(error);
   return parseJSON(error.response)
     .then((parsedError: any) => { throw parsedError; });
 }
 
+const checkStatus = (response: any) => {
+  if (response.status === 401) {
+    const navigate = useNavigate();
+    navigate('/not-found');
+
+    return null;
+  }
+
+  if (response.status >= 200 && response.status < 300) {
+    return response;
+  }
+
+  throw new Error();
+}
+
 const request = (apiUrl: string, requestOptions={}) => {
   return fetch(apiUrl, requestOptions)
+    .then(checkStatus)
     .then(parseJSON)
     .catch(catchError)
 };
