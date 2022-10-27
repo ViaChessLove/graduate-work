@@ -12,9 +12,16 @@ export interface CoinsListProps {
   price: number,
   btcPrice: number,
   iconUrl: string,
+  rank: number,
+  sparkline: any,
+  change: string,
 }
 
 export interface RouteProps {
   path: string,
   element: () => JSX.Element,
+}
+
+export interface ChangeProps {
+  change: number,
 }

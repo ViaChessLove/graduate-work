@@ -1,5 +1,9 @@
 export const COLORS = {
   black: '#000',
+  red: '#ff0000',
+  green: '#11ff00',
+  yellow: '#fffb00',
+  bioticGrasp: '#f24e77',
   oreBluishBlack: '#182b33',
   poisonousIceCream: '#ded82c',
   ruskinBlueColor: '#546b75',

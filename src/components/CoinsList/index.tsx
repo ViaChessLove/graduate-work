@@ -12,14 +12,19 @@ import {
 
 const CoinsList = () => {
   const coins: any = useSelector(makeSelectCoinsSliceCoins);
+  console.log(coins);
   return (
     <CoinsListWrapper>
+      {/* menu */}
       <CoinsListContainer>
         {coins?.map(({
             name,
             price,
             btcPrice,
             iconUrl,
+            rank,
+            sparkline,
+            change,
           }: CoinsListProps,
           coinIndex: number,
         ) => (
@@ -29,6 +34,9 @@ const CoinsList = () => {
             btcPrice={btcPrice}
             iconUrl={iconUrl}
             price={price}
+            rank={rank}
+            sparkline={sparkline}
+            change={change}
           />
         ))}
       </CoinsListContainer>

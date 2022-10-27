@@ -1,32 +1,39 @@
-import React from 'react'
 import { CoinsListProps } from '../../types';
-import { CoinImageContent } from './CoinStyles';
+import { formatPrice } from '../../utils/utils';
+import { COLORS } from '../../constants';
+
+import {
+  CoinImageContent,
+  CoinContainer,
+  CoinNameContent,
+  PriceNameContent,
+} from './CoinStyles';
+import Change from '../Change';
 
 const Coin = (props: CoinsListProps) => {
   const {
     iconUrl,
     name,
-    btcPrice,
-    price
+    price,
+    sparkline,
+    change,
+    rank,
   } = props;
 
   return (
-    <div>
+    <CoinContainer to={`/coins/${rank}`}>
       <CoinImageContent
         src={iconUrl}
         alt={`icon--${iconUrl}`}
       />
-      <div>
-        {`Title - ${name}`}
-      </div>
-      <div>
-        {`${price}$`}
-      </div>
-      <div>
-        {`btcPrice - ${btcPrice}`}
-      </div>
-      <hr/>
-    </div>
+      <CoinNameContent>
+        {name}
+      </CoinNameContent>
+      <PriceNameContent>
+        {`${formatPrice(price)}$`}
+      </PriceNameContent>
+      <Change change={change} />
+    </CoinContainer>
   )
 }
 
