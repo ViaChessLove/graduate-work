@@ -20,6 +20,7 @@ export interface CoinsListProps {
 export interface RouteProps {
   path: string,
   element: () => JSX.Element,
+  index: boolean,
 }
 
 export interface ChangeProps {

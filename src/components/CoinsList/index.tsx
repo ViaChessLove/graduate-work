@@ -15,7 +15,6 @@ const CoinsList = () => {
   console.log(coins);
   return (
     <CoinsListWrapper>
-      {/* menu */}
       <CoinsListContainer>
         {coins?.map(({
             name,

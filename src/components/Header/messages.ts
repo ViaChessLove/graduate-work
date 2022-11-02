@@ -3,7 +3,7 @@ export const HEADER_MESSAGES = {
   links: [
     { 
       title: 'coins',
-      container: '/',
+      container: '/coin',
     },
     {
       title: 'news',

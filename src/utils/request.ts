@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const parseJSON = (response: any) => {
   return response.json();
@@ -12,9 +12,8 @@ const catchError = (error: any) => {
 
 const checkStatus = (response: any) => {
   if (response.status === 401) {
-    const navigate = useNavigate();
-    navigate('/not-found');
-
+    const nav = useNavigate();
+    nav('/not-found');
     return null;
   }
 
@@ -25,7 +24,7 @@ const checkStatus = (response: any) => {
   throw new Error();
 }
 
-const request = (apiUrl: string, requestOptions={}) => {
+const request = (apiUrl: string, requestOptions={}): Promise<any> => {
   return fetch(apiUrl, requestOptions)
     .then(checkStatus)
     .then(parseJSON)

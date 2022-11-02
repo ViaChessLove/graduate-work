@@ -1,5 +1,4 @@
 import {
-  BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
@@ -13,28 +12,29 @@ import { routes } from './routes';
 
 import { RouteProps } from './types';
 
-const App = () => {
-  return (
-    <BrowserRouter>
-      <ResetCSS/>
-      <Header />
-      <Routes>
-        {routes
+const App = () => (
+  <>
+    <ResetCSS/>
+    <Header />
+    <Routes>
+      {routes
         .map(({
           path,
           element,
+          index,
           }: RouteProps,
-          routeIndex) => (
+          routeIndex,
+        ) => (
           <Route
-            key={routeIndex}
+            key={`routeIndex--${routeIndex}`}
             path={path}
             element={element()}
+            index={index}
           />
-        ))}
-      </Routes>
-      <Footer />
-    </BrowserRouter>
-  )
-}
+      ))}
+    </Routes>
+    <Footer />
+  </>
+);
 
 export default App;

@@ -5,6 +5,9 @@ import {
 } from "../components/Change/ChangeStyles";
 
 const formatPrice = (price: number) => (Math.round(price*100) / 100).toFixed(2);
+const formatCoinRequest = (uuid: string, timePeriod: number) => (
+  `https://coinranking1.p.rapidapi.com/coin/${uuid}?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=${timePeriod}h`
+);
 
 const setChangeWrapper = (change: number) => {
   switch(true) {
@@ -20,4 +23,5 @@ const setChangeWrapper = (change: number) => {
 export {
   formatPrice,
   setChangeWrapper,
+  formatCoinRequest,
 };

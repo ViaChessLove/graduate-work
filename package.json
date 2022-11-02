@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "lint": "eslint --max-warnings=0 src"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.6",
@@ -18,12 +17,14 @@
     "react-chartjs-2": "^4.3.1",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.4",
+    "react-router": "^6.4.3",
     "react-router-dom": "^6.4.2",
     "redux": "^4.2.0",
     "redux-saga": "^1.2.1",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {
+    "@rollup/plugin-eslint": "^9.0.1",
     "@types/eslint": "^8.4.7",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",

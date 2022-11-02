@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   H1,
   Placeholder,
@@ -20,12 +21,17 @@ const Header = () => {
     <>
       <HeaderWrapper>
         <HeaderContent>
-          <H1>
-            { title }
-          </H1>
+          <HeaderRoute to='/'>
+            <H1>
+                { title }
+            </H1>
+          </HeaderRoute>
           <HeaderRoutes>
-            {links.map(({ title, container}) => (
-              <HeaderRoute to={ container }>
+            {links.map(({ title, container}, linkIndex) => (
+              <HeaderRoute
+                to={ container }
+                key={`id--link--${linkIndex}`}
+              >
                 { title }
               </HeaderRoute>
             ))}

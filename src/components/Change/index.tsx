@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import { ChangeProps } from '../../types';
-import { setChangeWrapper } from '../../utils/utils';
+import { setChangeWrapper } from '../../utils/helpers';
 
 const Change = (props: ChangeProps) => {
   const {

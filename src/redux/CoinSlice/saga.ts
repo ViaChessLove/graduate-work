@@ -14,7 +14,7 @@ import {
 } from './constants';
 import { getCoinsResponse } from '.';
 
-export function* getCoinsFromApi() {
+export function* getCoinsFromApi(): any {
   try {
     const response = yield call(request, COINS_API, COINS_REQUEST_OPTIONS);
     if (response) {

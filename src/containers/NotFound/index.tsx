@@ -8,7 +8,9 @@ import {
 const NotFound = () => (
   <NotFoundWrapper>
     <NotFoundContainer>
-      <H1>Page not found</H1>
+      <H1>
+        Page not found
+      </H1>
     </NotFoundContainer>
   </NotFoundWrapper>
 );
