@@ -1,3 +1,3 @@
-const prefix = (action: string): string => `coins/${action}`;
+const prefix = (action: string): string => `coin/${action}`;
 
-export const getCoins = prefix('getCoins');
+export const getCoin = prefix('getCoin');

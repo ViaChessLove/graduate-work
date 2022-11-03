@@ -1,44 +1,29 @@
-import { createDraftSafeSelector } from '@reduxjs/toolkit';
-import {
-  createSlice,
-  PayloadAction,
-} from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const initialState: any = {
-  coins: [],
+const initialState = {
+  coin: null,
   isLoading: true,
+  uuid: '',
 }
 
-export const coinsSlice = createSlice({
-  name: 'coins',
+export const coinSlice = createSlice({
+  name: 'coin',
   initialState,
   reducers: {
-    getCoins: (state: any) => {
+    getCoin: (state: any, action: PayloadAction<string>) => { //eslint-disable-line
+      state.uuid = action.payload;
       state.isLoading = true;
     },
-    getCoinsResponse: (state: any, action: PayloadAction) => {
-      state.coins = action.payload;
+    getCoinResponse: (state: any, action: PayloadAction) => { //eslint-disable-line
+      state.coin = action.payload;
       state.isLoading = false;
-    },
+    }
   },
 });
 
-export const coinsSelectorProvider = (state: any) => state.coins;
+export const coinUuidSelector = (state: any): string | null => state.uuid;
+export const coinLoadingIndicatorSelector = (state: any) => state.isLoading;
+export const coinSelectorProvider = (state: any) => state.coin;
 
-export const makeSelectCoinsSlice = createDraftSafeSelector(
-  coinsSelectorProvider,
-  (subState) => subState.coins,
-)
-
-export const makeSelectCoinsSliceCoins = createDraftSafeSelector(
-  makeSelectCoinsSlice,
-  (subState) => subState?.data?.coins,
-)
-
-export const makeSelectIsLoading = createDraftSafeSelector(
-  coinsSelectorProvider,
-  (subState) => subState.isLoading,
-)
-
-export const { getCoins, getCoinsResponse } = coinsSlice.actions;
-export default coinsSlice.reducer;
+export const { getCoin, getCoinResponse} = coinSlice.actions;
+export default coinSlice.reducer;

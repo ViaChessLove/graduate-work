@@ -1,5 +1,3 @@
-import { useNavigate } from 'react-router-dom';
-
 const parseJSON = (response: any) => {
   return response.json();
 }
@@ -12,8 +10,6 @@ const catchError = (error: any) => {
 
 const checkStatus = (response: any) => {
   if (response.status === 401) {
-    const nav = useNavigate();
-    nav('/not-found');
     return null;
   }
 

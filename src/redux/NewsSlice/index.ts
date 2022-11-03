@@ -1,10 +1,9 @@
 import {
   createDraftSafeSelector,
   createSlice,
-  PayloadAction,
 } from '@reduxjs/toolkit';
 
-const initialState: any = {
+const initialState = {
   news: [],
   isLoading: true
 }
@@ -13,13 +12,13 @@ export const newsSlice = createSlice({
   name: 'news',
   initialState,
   reducers: {
-    changeLoadingState: (state: any, action: PayloadAction) => {
+    changeLoadingState: (state) => {
       state.isLoading = !state.isLoading;
     }
   },
 });
 
-export const newsSelectorProvider = (state: any) => state.news;
+export const newsSelectorProvider = (state) => state.news;
 
 export const makeSelectNews = createDraftSafeSelector(
   newsSelectorProvider,
@@ -32,5 +31,5 @@ export const makeSelectIsLoading = createDraftSafeSelector(
 )
 
 
-export const { } = newsSlice.actions;
+// export const { } = newsSlice.actions;
 export default newsSlice.reducer;

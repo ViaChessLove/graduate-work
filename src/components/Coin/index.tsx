@@ -1,6 +1,5 @@
 import { CoinsListProps } from '../../types';
 import { formatPrice } from '../../utils/helpers';
-import { COLORS } from '../../constants';
 
 import {
   CoinImageContent,
@@ -15,13 +14,12 @@ const Coin = (props: CoinsListProps) => {
     iconUrl,
     name,
     price,
-    sparkline,
     change,
-    rank,
+    uuid
   } = props;
 
   return (
-    <CoinContainer to={`/coin/${rank}`}>
+    <CoinContainer to={`/coin/${uuid}`}>
       <CoinImageContent
         src={iconUrl}
         alt={`icon--${iconUrl}`}
@@ -33,7 +31,7 @@ const Coin = (props: CoinsListProps) => {
         {`${formatPrice(price)}$`}
       </PriceNameContent>
       <Change
-        change={change}
+        change={Number(change)}
       />
     </CoinContainer>
   )

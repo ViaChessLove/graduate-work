@@ -13,7 +13,7 @@ export const routes: RouteProps[] = [
     index: true,
   },
   {
-    path: '/coin',
+    path: '/coins',
     element: Coins,
     index: false,
   },
@@ -28,7 +28,7 @@ export const routes: RouteProps[] = [
     index: false,
   },
   {
-    path: '/coin/:coinId',
+    path: '/coin/:uuid',
     element: Coin,
     index: false,
   }

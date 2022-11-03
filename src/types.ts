@@ -15,6 +15,7 @@ export interface CoinsListProps {
   rank: number,
   sparkline: any,
   change: string,
+  uuid: string,
 }
 
 export interface RouteProps {

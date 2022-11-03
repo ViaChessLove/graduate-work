@@ -4,10 +4,12 @@ import {
   NotChangingWrapper,
 } from "../components/Change/ChangeStyles";
 
-const formatPrice = (price: number) => (Math.round(price*100) / 100).toFixed(2);
-const formatCoinRequest = (uuid: string, timePeriod: number) => (
-  `https://coinranking1.p.rapidapi.com/coin/${uuid}?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=${timePeriod}h`
+const formatPrice = (price: number): string => (Math.round(price*100) / 100).toFixed(2);
+const formatCoinRequest = (uuid: string): string => (
+  `https://coinranking1.p.rapidapi.com/coin/${uuid}`
 );
+
+const getUuidFromPathName = (path: string): string => path.split('/')[2];
 
 const setChangeWrapper = (change: number) => {
   switch(true) {
@@ -20,8 +22,15 @@ const setChangeWrapper = (change: number) => {
   }
 };
 
+//функция высшего порядка для упрощения синтаксиса
+const compose = (...functions: any) => (initialValue: any) => (
+  functions.reduceRight((result: any, func: any) => func((result), initialValue))
+);
+
 export {
   formatPrice,
   setChangeWrapper,
   formatCoinRequest,
+  getUuidFromPathName,
+  compose,
 };

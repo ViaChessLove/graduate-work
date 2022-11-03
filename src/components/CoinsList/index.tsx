@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import { useSelector } from 'react-redux';
 
-import { makeSelectCoinsSliceCoins } from '../../redux/CoinSlice/index';
+import { makeSelectCoinsSliceCoins } from '../../redux/CoinsSlice/index';
 import { CoinsListProps } from '../../types';
 import Coin from '../Coin';
 
@@ -11,7 +11,7 @@ import {
 } from './CoinsListStyles';
 
 const CoinsList = () => {
-  const coins: any = useSelector(makeSelectCoinsSliceCoins);
+  const coins = useSelector(makeSelectCoinsSliceCoins);
   console.log(coins);
   return (
     <CoinsListWrapper>
@@ -24,6 +24,7 @@ const CoinsList = () => {
             rank,
             sparkline,
             change,
+            uuid
           }: CoinsListProps,
           coinIndex: number,
         ) => (
@@ -36,6 +37,7 @@ const CoinsList = () => {
             rank={rank}
             sparkline={sparkline}
             change={change}
+            uuid={uuid}
           />
         ))}
       </CoinsListContainer>

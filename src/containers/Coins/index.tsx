@@ -8,7 +8,7 @@ import CoinsList from '../../components/CoinsList';
 import {
   getCoins,
   makeSelectIsLoading,
-} from '../../redux/CoinSlice';
+} from '../../redux/CoinsSlice';
 
 const Coins = () => {
   const dispatch = useDispatch();
