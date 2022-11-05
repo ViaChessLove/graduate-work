@@ -2,12 +2,7 @@ import {
   H1,
   Placeholder,
 } from "../../GlobalStyles";
-import {
-  HeaderContent,
-  HeaderRoute,
-  HeaderRoutes,
-  HeaderWrapper,
-} from "./HeaderStyles";
+import * as header from "./HeaderStyles";
 
 import { HEADER_MESSAGES } from "./messages";
 
@@ -18,25 +13,25 @@ const Header = () => {
   } = HEADER_MESSAGES;
   return (
     <>
-      <HeaderWrapper>
-        <HeaderContent>
-          <HeaderRoute to='/'>
+      <header.HeaderWrapper>
+        <header.HeaderContent>
+          <header.HeaderRoute to='/'>
             <H1>
                 { title }
             </H1>
-          </HeaderRoute>
-          <HeaderRoutes>
+          </header.HeaderRoute>
+          <header.HeaderRoutes>
             {links.map(({ title, container}, linkIndex) => (
-              <HeaderRoute
+              <header.HeaderRoute
                 to={ container }
                 key={`id--link--${linkIndex}`}
               >
                 { title }
-              </HeaderRoute>
+              </header.HeaderRoute>
             ))}
-          </HeaderRoutes>
-        </HeaderContent>
-      </HeaderWrapper>
+          </header.HeaderRoutes>
+        </header.HeaderContent>
+      </header.HeaderWrapper>
       <Placeholder
         height={'40px'}
         className={''}

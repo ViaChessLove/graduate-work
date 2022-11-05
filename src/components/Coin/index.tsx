@@ -1,12 +1,7 @@
 import { CoinsListProps } from '../../types';
 import { formatPrice } from '../../utils/helpers';
 
-import {
-  CoinImageContent,
-  CoinContainer,
-  CoinNameContent,
-  PriceNameContent,
-} from './CoinStyles';
+import * as styles from './CoinStyles';
 import Change from '../Change';
 
 const Coin = (props: CoinsListProps) => {
@@ -15,25 +10,28 @@ const Coin = (props: CoinsListProps) => {
     name,
     price,
     change,
-    uuid
+    uuid,
+    symbol,
   } = props;
 
   return (
-    <CoinContainer to={`/coin/${uuid}`}>
-      <CoinImageContent
+    <styles.CoinContainer
+      to={`/coin/${uuid}`}
+    >
+      <styles.CoinImageContent
         src={iconUrl}
         alt={`icon--${iconUrl}`}
       />
-      <CoinNameContent>
-        {name}
-      </CoinNameContent>
-      <PriceNameContent>
+      <styles.CoinNameContent>
+        {symbol}
+      </styles.CoinNameContent>
+      <styles.PriceNameContent>
         {`${formatPrice(price)}$`}
-      </PriceNameContent>
+      </styles.PriceNameContent>
       <Change
         change={Number(change)}
       />
-    </CoinContainer>
+    </styles.CoinContainer>
   )
 }
 

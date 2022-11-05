@@ -1,14 +1,28 @@
 import styled from "styled-components";
 import { COLORS } from "../../constants";
 
-export const IncreaseChangeWrapper = styled.div`
-  color: ${COLORS.green};
+export const ChangeWrapper = styled.span`
+  display: block;
+
+  font-weight: 700;
 `;
 
-export const NotChangingWrapper = styled.div`
+export const IncreaseChangeWrapper = styled(ChangeWrapper)`
+  color: ${COLORS.green};
+
+  &:after {
+    content: " ⮝";
+  }
+`;
+
+export const NotChangingWrapper = styled(ChangeWrapper)`
   color: ${COLORS.yellow};
 `;
 
-export const DecreaseChangeWrapper = styled.div`
+export const DecreaseChangeWrapper = styled(ChangeWrapper)`
   color: ${COLORS.red};
+
+  &:after {
+    content: " ⮟";
+  }
 `;

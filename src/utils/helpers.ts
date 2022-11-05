@@ -1,12 +1,10 @@
-import {
-  DecreaseChangeWrapper,
-  IncreaseChangeWrapper,
-  NotChangingWrapper,
-} from "../components/Change/ChangeStyles";
+import * as styled from "../components/Change/ChangeStyles";
+import { COIN_API_URL } from "../constants";
 
 const formatPrice = (price: number): string => (Math.round(price*100) / 100).toFixed(2);
+
 const formatCoinRequest = (uuid: string): string => (
-  `https://coinranking1.p.rapidapi.com/coin/${uuid}`
+  `${COIN_API_URL}${uuid}`
 );
 
 const getUuidFromPathName = (path: string): string => path.split('/')[2];
@@ -14,11 +12,11 @@ const getUuidFromPathName = (path: string): string => path.split('/')[2];
 const setChangeWrapper = (change: number) => {
   switch(true) {
     case change > 1:
-      return IncreaseChangeWrapper;
+      return styled.IncreaseChangeWrapper;
     case change < -1:
-      return DecreaseChangeWrapper;
+      return styled.DecreaseChangeWrapper;
     default:
-      return NotChangingWrapper;
+      return styled.NotChangingWrapper;
   }
 };
 

@@ -24,7 +24,8 @@ const CoinsList = () => {
             rank,
             sparkline,
             change,
-            uuid
+            uuid,
+            symbol,
           }: CoinsListProps,
           coinIndex: number,
         ) => (
@@ -38,6 +39,7 @@ const CoinsList = () => {
             sparkline={sparkline}
             change={change}
             uuid={uuid}
+            symbol={symbol}
           />
         ))}
       </CoinsListContainer>

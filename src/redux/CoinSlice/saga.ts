@@ -1,14 +1,23 @@
-import { call, put, select, takeLatest } from "redux-saga/effects";
-import { COINS_REQUEST_OPTIONS } from "../../constants";
-import { formatCoinRequest } from "../../utils/helpers";
+import {
+  call,
+  put,
+  select,
+  takeEvery,
+} from 'redux-saga/effects';
+import { COINS_REQUEST_OPTIONS} from '../../constants';
+import { formatCoinRequest } from '../../utils/helpers';
 import request from "../../utils/request";
 import { getCoin } from "./constants";
-import { coinUuidSelector, getCoinResponse } from './index';
+import {
+  getCoinResponse,
+  makeSelectUuid,
+} from './index';
 
-function* getCoinFromApi() {
+function* getCoinFromApi(): Generator {
   try {
-    const uuid: string = yield select(coinUuidSelector);
-    const response: any = yield call(request, formatCoinRequest(uuid), COINS_REQUEST_OPTIONS)
+    const uuid: unknown = yield select(makeSelectUuid);
+    const response = yield call(request, formatCoinRequest(uuid), COINS_REQUEST_OPTIONS);
+
     if (response) {
       yield put(getCoinResponse(response));
     }
@@ -18,5 +27,5 @@ function* getCoinFromApi() {
 }
 
 export default function* coinSaga() {
-  yield takeLatest(getCoin, getCoinFromApi);
+  yield takeEvery(getCoin, getCoinFromApi);
 }

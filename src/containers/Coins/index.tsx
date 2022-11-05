@@ -3,6 +3,7 @@ import {
   useDispatch,
   useSelector,
 } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import CoinsList from '../../components/CoinsList';
 
 import {
@@ -11,13 +12,15 @@ import {
 } from '../../redux/CoinsSlice';
 
 const Coins = () => {
+  const location = useLocation();
+
   const dispatch = useDispatch();
 
   const isLoading = useSelector(makeSelectIsLoading);
 
   useLayoutEffect(() => {
     dispatch(getCoins());
-  }, [dispatch]);
+  }, [dispatch, location]);
 
   return (
     <>

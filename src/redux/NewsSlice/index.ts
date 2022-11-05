@@ -18,7 +18,7 @@ export const newsSlice = createSlice({
   },
 });
 
-export const newsSelectorProvider = (state) => state.news;
+export const newsSelectorProvider = (state: any) => state.news;
 
 export const makeSelectNews = createDraftSafeSelector(
   newsSelectorProvider,

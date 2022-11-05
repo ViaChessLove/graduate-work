@@ -16,6 +16,7 @@ export interface CoinsListProps {
   sparkline: any,
   change: string,
   uuid: string,
+  symbol: string,
 }
 
 export interface RouteProps {
@@ -26,4 +27,15 @@ export interface RouteProps {
 
 export interface ChangeProps {
   change: number,
+}
+
+export interface CoinsStateType {
+  coins: any,
+  isLoading: boolean,
+}
+
+export interface CoinStateType {
+  coin: any,
+  isLoading: boolean,
+  uuid: string,
 }

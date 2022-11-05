@@ -1,10 +1,11 @@
 import { createDraftSafeSelector } from '@reduxjs/toolkit';
+import { CoinsStateType } from '../../types';
 import {
   createSlice,
   PayloadAction,
 } from '@reduxjs/toolkit';
 
-const initialState = {
+const initialState: CoinsStateType = {
   coins: [],
   isLoading: true,
 }
@@ -13,17 +14,17 @@ export const coinsSlice = createSlice({
   name: 'coins',
   initialState,
   reducers: {
-    getCoins: (state) => {
+    getCoins: (state: CoinsStateType) => {
       state.isLoading = true;
     },
-    getCoinsResponse: (state: any, action: PayloadAction) => {
+    getCoinsResponse: (state: CoinsStateType, action: PayloadAction) => {
       state.coins = action.payload;
       state.isLoading = false;
     },
   },
 });
 
-export const coinsSelectorProvider = (state: any) => state.coins;
+export const coinsSelectorProvider = (state: CoinsStateType) => state.coins;
 
 export const makeSelectCoinsSlice = createDraftSafeSelector(
   coinsSelectorProvider,
