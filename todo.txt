@@ -11,3 +11,12 @@
 - coin routes
 - styles
 - location
+
+      {/* TODO: SEARCH INPUT */}
+      {/* TODO: SORT INPUT */}
+      {/* TODO: PAGINATION INPUT */}
+      // TODO: NEWS LIST
+      // TODO: HOMEPAGE
+      // TODO: GRAPHS IN SEPERATE CONTAINER
+      // TODO: LAYOUT FOR coin
+      // TODO: LODER

@@ -20,7 +20,7 @@ const Coins = () => {
 
   useLayoutEffect(() => {
     dispatch(getCoins());
-  }, [dispatch, location]);
+  }, [location]);
 
   return (
     <>
@@ -30,7 +30,9 @@ const Coins = () => {
         </>
       )}
       {!isLoading && (
-        <CoinsList />
+        <>
+          <CoinsList />
+        </>
       )}
     </>
   )

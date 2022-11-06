@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from "styled-components";
 
-import { COLORS } from "../../constants";
+import { COLORS, SCREEN_RESOLUTIONS } from "../../constants";
 
 export const HeaderWrapper = styled.header`
   position: fixed;
@@ -36,6 +36,10 @@ export const HeaderRoutes = styled.div`
   justify-content: space-between;
 
   width: 150px;
+
+  @media screen and (max-width: ${SCREEN_RESOLUTIONS.mobileL}) {
+    width: 100px;
+  }
 `;
 
 export const HeaderRoute = styled(Link)`
@@ -46,4 +50,8 @@ export const HeaderRoute = styled(Link)`
   letter-spacing: 0.1em;
   text-transform: capitalize;
   text-decoration: none;
+
+  @media screen and (max-width: ${SCREEN_RESOLUTIONS.mobileL}) {
+    font-size: 14px;
+  }
 `;

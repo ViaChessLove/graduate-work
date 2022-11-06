@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { COLORS } from "../../constants";
+import { COLORS, SCREEN_RESOLUTIONS } from "../../constants";
 
 export const FooterWrapper = styled.footer`
   position: fixed;
@@ -26,4 +26,8 @@ export const FooterContainer = styled.div`
   text-align: center;
 
   max-width: 900px;
+  
+  @media screen and (max-width: ${SCREEN_RESOLUTIONS.tablet}) {
+    padding: 10px;
+  }
 `;

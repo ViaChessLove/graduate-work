@@ -9,6 +9,7 @@ import {
 import * as slice from '../../redux/CoinSlice';
 import { getUuidFromPathName } from '../../utils/helpers';
 import { makeSelectCoinData } from '../../redux/CoinSlice/index';
+import { CoinImageContent} from './CoinStyles';
 
 const Coin = () => {
   const location = useLocation();
@@ -35,7 +36,7 @@ const Coin = () => {
       ) : (
         <div>
           {coin?.name}
-          <img
+          <CoinImageContent
             src={coin?.iconUrl}
             alt={`icon-${coin?.name}`}
           />

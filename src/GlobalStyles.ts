@@ -2,6 +2,7 @@ import
   styled,
   { createGlobalStyle }
 from 'styled-components';
+import { SCREEN_RESOLUTIONS } from './constants';
 import { H1Props, PlaceholderProps } from './types';
 
 export const ResetCSS = createGlobalStyle`
@@ -59,11 +60,15 @@ export const H1 = styled.h1`
   font-size: 22px;
   letter-spacing: 0.05em;
   font-family: inherit;
-  font-weight: 600;
+  font-weight: 600
 
   margin-bottom: ${(props: H1Props) => (props.marginBottom 
     ? props.marginBottom
-    : '0px')}
+    : '0px')};
+  
+  @media screen and (max-width: ${SCREEN_RESOLUTIONS.mobileL}) {
+    font-size: 18px;
+  };
 `;
 
 export const P = styled.p`
@@ -81,4 +86,6 @@ export const ContentWithCoinsOrNewsContainer = styled.div`
   max-width: 800px;
 
   font-family: 'Neucha', cursive;
+
+  transition: .5s ease-in-out;
 `;

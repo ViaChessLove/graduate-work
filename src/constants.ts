@@ -2,7 +2,7 @@ export const COLORS = {
   black: '#000',
   red: '#ff0000',
   green: '#11ff00',
-  yellow: '#fffb00',
+  yellow: '#ffe93b',
   bioticGrasp: '#f24e77',
   oreBluishBlack: '#182b33',
   poisonousIceCream: '#ded82c',
@@ -10,6 +10,14 @@ export const COLORS = {
   stegadonScaleGreen: '#094c69',
   carrierPigeonBlue: '#87959c',
   white: '#fff',
+};
+
+export const SCREEN_RESOLUTIONS = {
+  laptop: '1200px',
+  tabletL: '960px',
+  tablet: '768px',
+  mobileL: '500px',
+  mobile: '420px',
 };
 
 export const X_RAPIDAPI_KEY = '517ae7c2b3mshca817e8d77e12f8p1ef4e2jsnbee733730bd1';
