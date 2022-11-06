@@ -7,9 +7,10 @@ import {
   useLocation,
 } from 'react-router-dom';
 import * as slice from '../../redux/CoinSlice';
-import { getUuidFromPathName } from '../../utils/helpers';
+import { formatDescription, getUuidFromPathName } from '../../utils/helpers';
 import { makeSelectCoinData } from '../../redux/CoinSlice/index';
-import { CoinImageContent} from './CoinStyles';
+import { CoinDescription, CoinImageContent, CoinTitleWrapper, CoinWrapper} from './CoinStyles';
+import { ContentWithCoinsOrNewsContainer, H1 } from '../../GlobalStyles';
 
 const Coin = () => {
   const location = useLocation();
@@ -34,14 +35,22 @@ const Coin = () => {
           Loading...
         </div>
       ) : (
-        <div>
-          {coin?.name}
-          <CoinImageContent
-            src={coin?.iconUrl}
-            alt={`icon-${coin?.name}`}
-          />
-          <div dangerouslySetInnerHTML={{__html: coin?.description}}></div>
-        </div>
+        <CoinWrapper>
+          <ContentWithCoinsOrNewsContainer>
+            <CoinTitleWrapper>
+              <H1>
+                {coin?.name}
+              </H1>
+              <CoinImageContent
+                src={coin?.iconUrl}
+                alt={`icon-${coin?.name}`}
+              />
+            </CoinTitleWrapper>
+            <CoinDescription dangerouslySetInnerHTML={{__html: (coin?.description)}} />
+            {/*Radio buttons on change time period*/}
+            {/*Chart*/}
+          </ContentWithCoinsOrNewsContainer>
+        </CoinWrapper>
       )}
     </>
   )

@@ -4,6 +4,7 @@ export const COLORS = {
   green: '#11ff00',
   yellow: '#ffe93b',
   bioticGrasp: '#f24e77',
+  riveraSea: '#198280',
   oreBluishBlack: '#182b33',
   poisonousIceCream: '#ded82c',
   ruskinBlueColor: '#546b75',

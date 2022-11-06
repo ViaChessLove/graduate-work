@@ -4,7 +4,7 @@ import {
   select,
   takeEvery,
 } from 'redux-saga/effects';
-import { COINS_REQUEST_OPTIONS} from '../../constants';
+import { COINS_REQUEST_OPTIONS } from '../../constants';
 import { formatCoinRequest } from '../../utils/helpers';
 import request from "../../utils/request";
 import { getCoin } from "./constants";

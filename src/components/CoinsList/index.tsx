@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { makeSelectCoinsSliceCoins } from '../../redux/CoinsSlice/index';
 import { CoinsListProps } from '../../types';
-import Coin from '../Coin';
+import Coin from '../CoinItem';
 
 import {
   CoinsListContainer,

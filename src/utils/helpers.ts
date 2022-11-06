@@ -3,6 +3,10 @@ import { COIN_API_URL } from "../constants";
 
 const formatPrice = (price: number): string => (Math.round(price*100) / 100).toFixed(2);
 
+const formatDescription = (description: string): string => (
+  description.length > 2000 ? `${description.slice(0,121)}...` : description
+);
+
 const formatCoinRequest = (uuid: string): string => (
   `${COIN_API_URL}${uuid}`
 );
@@ -31,4 +35,5 @@ export {
   formatCoinRequest,
   getUuidFromPathName,
   compose,
+  formatDescription,
 };

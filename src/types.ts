@@ -1,41 +1,46 @@
 export interface PlaceholderProps {
-  height?: string;
-  className?: string;
+  readonly height?: string;
+  readonly className?: string;
 }
 
 export interface H1Props {
-  marginBottom?: string;
+  readonly marginBottom?: string;
 }
 
 export interface CoinsListProps {
-  name: string,
-  price: number,
-  btcPrice: number,
-  iconUrl: string,
-  rank: number,
-  sparkline: any,
-  change: string,
-  uuid: string,
-  symbol: string,
+  readonly name: string,
+  readonly price: number,
+  readonly btcPrice: number,
+  readonly iconUrl: string,
+  readonly rank: number,
+  readonly sparkline: any,
+  readonly change: string,
+  readonly uuid: string,
+  readonly symbol: string,
+}
+
+export interface CoinProps extends CoinsListProps {
+  readonly description: string,
 }
 
 export interface RouteProps {
-  path: string,
-  element: () => JSX.Element,
-  index: boolean,
+  readonly path: string,
+  readonly element: () => JSX.Element,
+  readonly index: boolean,
 }
 
 export interface ChangeProps {
-  change: number,
+  readonly change: number,
 }
 
 export interface CoinsStateType {
-  coins: any,
-  isLoading: boolean,
+  readonly coins: any,
+  readonly isLoading: boolean,
 }
 
 export interface CoinStateType {
-  coin: any,
-  isLoading: boolean,
-  uuid: string,
+  readonly coin: any,
+  readonly isLoading: boolean,
+  readonly uuid: string,
+  readonly timePeriod?: string,
 }

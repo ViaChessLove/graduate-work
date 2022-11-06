@@ -9,6 +9,7 @@ const initialState: CoinStateType = {
   coin: null,
   isLoading: false,
   uuid: '',
+  timePeriod: '24h',
 }
 
 export const coinSlice = createSlice({
@@ -29,6 +30,8 @@ export const coinSlice = createSlice({
       state.coin = null;
       state.isLoading = false;
       state.uuid = '';
+    },
+    changeTimePeriod: (state: CoinStateType, action: PayloadAction<string>) => { //eslint-disable-line
     },
   },
 });
@@ -60,5 +63,6 @@ export const {
   getCoinResponse,
   setUuid,
   resetCoin,
+  changeTimePeriod,
 } = coinSlice.actions;
 export default coinSlice.reducer;
