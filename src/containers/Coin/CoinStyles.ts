@@ -28,12 +28,26 @@ export const CoinImageContent = styled.img`
   height: 70px;
 
   border-radius: 50%;
-  border: 3px solid ${COLORS.oreBluishBlack};
 
   object-fit: cover;
 `;
 
 export const CoinDescription = styled.div`
+  border: 2px solid ${COLORS.carrierPigeonBlue};
+
+  height: 150px;
+
+  overflow-y: scroll;
+
+  ::-webkit-scrollbar {
+    width: 1px;
+  };
+
+  ::-webkit-scrollbar-thumb {
+    background-color: ${COLORS.oreBluishBlack};
+    outline: 1px solid ${COLORS.stegadonScaleGreen};
+  };
+
   font-size: 18px;
   padding: 15px;
 
