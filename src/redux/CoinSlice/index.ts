@@ -9,30 +9,39 @@ const initialState: CoinStateType = {
   coin: null,
   isLoading: false,
   uuid: '',
-  timePeriod: '24h',
+  data: null,
 }
 
 export const coinSlice = createSlice({
   name: 'coin',
   initialState,
   reducers: {
-    setUuid: (state: CoinStateType, action: PayloadAction<string>) => {
-      state.uuid = action.payload;
+    setUuid: (state: CoinStateType, { payload }: PayloadAction<string>) => {
+      state.uuid = payload;
     },
     getCoin: (state: CoinStateType) => { //eslint-disable-line
       state.isLoading = true;
     },
-    getCoinResponse: (state: CoinStateType, action: PayloadAction) => { //eslint-disable-line
-      state.coin = action.payload;
+    getCoinResponse: (state: CoinStateType, { payload }: PayloadAction) => { //eslint-disable-line
+      state.coin = payload;
       state.isLoading = false;
+    },
+    updateData: (state: CoinStateType, { payload }: PayloadAction<any>) => {
+      state.data = payload;
+    },
+    updateDataSets: (state: CoinStateType, { payload }: PayloadAction<any>) => {
+      state.data?.datasets.push(payload);
     },
     resetCoin: (state: CoinStateType) => {
       state.coin = null;
       state.isLoading = false;
       state.uuid = '';
+      state.data = null;
     },
-    changeTimePeriod: (state: CoinStateType, action: PayloadAction<string>) => { //eslint-disable-line
-    },
+    updateInitialGraphColor: (state:CoinStateType, { payload }: PayloadAction<any>) => {
+      state.data.datasets.borderColor = payload;
+      state.data.datasets.backgroundColor = payload;
+    }
   },
 });
 
@@ -58,11 +67,18 @@ export const makeSelectIsLoading = createDraftSafeSelector(
   (subState) => subState.isLoading,
 )
 
+export const makeSelectChartData = createDraftSafeSelector(
+  coinSelectorProvider,
+  (subState) => subState.data,
+);
+
 export const {
   getCoin,
   getCoinResponse,
   setUuid,
   resetCoin,
-  changeTimePeriod,
+  updateData,
+  updateDataSets,
+  updateInitialGraphColor,
 } = coinSlice.actions;
 export default coinSlice.reducer;

@@ -9,9 +9,9 @@ import {
 import * as slice from '../../redux/CoinSlice';
 import { getUuidFromPathName } from '../../utils/helpers';
 import { makeSelectCoinData } from '../../redux/CoinSlice/index';
-import { CoinDescription, CoinImageContent, CoinTitleWrapper, CoinWrapper} from './CoinStyles';
+import * as coinStyles from './CoinStyles';
 import { ContentWithCoinsOrNewsContainer, H1 } from '../../GlobalStyles';
-import { COLORS } from '../../constants';
+import { COLORS, OPTIONS } from '../../constants';
 
 import { Line } from 'react-chartjs-2';
 import {
@@ -45,73 +45,46 @@ const Coin = () => {
 
   const coin = useSelector(makeSelectCoinData);
   const isLoading = useSelector(slice.makeSelectIsLoading);
+  const data = useSelector(slice.makeSelectChartData);
 
+  //test
   useEffect(() => {
-    dispatch(slice.resetCoin());
     dispatch(slice.setUuid(uuid));
     dispatch(slice.getCoin());
-  }, [location])
+  }, []);
 
-  // chart data
 
-  // TODO: move data in store change data in saga side effect
-
-  const options = {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: 'top' as const,
-      },
-      title: {
-        display: true,
-        text: coin?.name,
-      },
-    },
-  }
-
-  const labels = coin?.sparkline.map((spark: string, sparkIndex: number) => `${sparkIndex}h`);
-
-  const data = {
-    labels,
-    datasets: [
-      {
-        label: coin?.symbol,
-        data: coin?.sparkline.map((spark: string, sparkline) => Number(spark)),
-        borderColor: COLORS.bioticGrasp,
-        backgroundColor: COLORS.carrierPigeonBlue,
-      }
-    ]
-  }
-
-  console.log(labels);
+  const isNullData = data === null;
 
   return (
     <>
-      {isLoading ? (
+      {isLoading || isNullData ? (
         <div>
           Loading...
         </div>
       ) : (
-        <CoinWrapper>
+        <coinStyles.CoinWrapper>
           <ContentWithCoinsOrNewsContainer>
-            <CoinTitleWrapper>
+            <coinStyles.CoinTitleWrapper>
               <H1>
                 {coin?.name}
               </H1>
-              <CoinImageContent
+              <coinStyles.CoinImageContent
                 src={coin?.iconUrl}
                 alt={`icon-${coin?.name}`}
               />
-            </CoinTitleWrapper>
-            <CoinDescription dangerouslySetInnerHTML={{__html: (coin?.description)}} />
+            </coinStyles.CoinTitleWrapper>
+            <coinStyles.CoinDescription dangerouslySetInnerHTML={{__html: (coin?.description)}} />
             {/*Radio buttons on change time period*/}
             {/*Chart*/}
+            {/*Compare datasets by uuid */}
+
             <Line
-              options={options}
+              options={OPTIONS}
               data={data}
             />
           </ContentWithCoinsOrNewsContainer>
-        </CoinWrapper>
+        </coinStyles.CoinWrapper>
       )}
     </>
   )

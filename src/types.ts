@@ -39,8 +39,12 @@ export interface CoinsStateType {
 }
 
 export interface CoinStateType {
-  readonly coin: any,
-  readonly isLoading: boolean,
-  readonly uuid: string,
+  coin: any,
+  isLoading: boolean,
+  uuid: string,
   readonly timePeriod?: string,
+  data: {
+    labels: any,
+    datasets: [],
+  } | null,
 }

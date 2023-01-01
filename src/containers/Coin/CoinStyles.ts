@@ -35,6 +35,8 @@ export const CoinImageContent = styled.img`
 export const CoinDescription = styled.div`
   border: 2px solid ${COLORS.carrierPigeonBlue};
 
+  margin-bottom: 40px;
+
   height: 150px;
 
   overflow-y: scroll;

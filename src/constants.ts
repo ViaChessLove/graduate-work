@@ -44,3 +44,57 @@ export const NEWS_REQUEST_OPTIONS = {
 		'X-RapidAPI-Host': 'blockchain-news1.p.rapidapi.com'
 	},
 };
+
+export const OPTIONS = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: 'top' as const,
+      labels: {
+        color: COLORS.black,
+        font: {
+          family: 'Neucha',
+        },
+      },
+    },
+    title: {
+      display: false,
+    },
+    tooltip: {
+      bodyFont: {
+        family: 'Neucha',
+      },
+      titleFont: {
+        family: 'Neucha',
+      }
+    },
+  },
+  scales: {
+    yAxes: {
+      grid: {
+        display: false,
+        zeroLineColor: "transparent"
+      },
+      ticks: {
+        color: COLORS.black,
+        font: {
+          family: 'Neucha',
+          size: 14,
+        }
+      }
+    },
+    xAxes: {
+      grid: {
+        display: false,
+        zeroLineColor: "transparent"
+      },
+      ticks: {
+        color: COLORS.black,
+        font: {
+          family: 'Neucha',
+          size: 14,
+        }
+      }
+    },
+  },
+};
