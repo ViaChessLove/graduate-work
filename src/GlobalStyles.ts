@@ -57,6 +57,11 @@ export const Placeholder = styled.div`
 `;
 
 export const H1 = styled.h1`
+  display: ${(props: H1Props) => props.isBlock
+    ? 'block'
+    : 'inline'
+  };
+
   font-size: 22px;
   letter-spacing: 0.05em;
   font-family: inherit;

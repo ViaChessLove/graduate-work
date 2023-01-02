@@ -4,12 +4,14 @@ import {
   createDraftSafeSelector,
 } from '@reduxjs/toolkit';
 import { CoinStateType } from '../../types';
+import { COLORS } from '../../constants';
 
 const initialState: CoinStateType = {
   coin: null,
   isLoading: false,
   uuid: '',
   data: null,
+  comparableCoin: null,
 }
 
 export const coinSlice = createSlice({
@@ -19,10 +21,10 @@ export const coinSlice = createSlice({
     setUuid: (state: CoinStateType, { payload }: PayloadAction<string>) => {
       state.uuid = payload;
     },
-    getCoin: (state: CoinStateType) => { //eslint-disable-line
+    getCoin: (state: CoinStateType) => { // eslint-disable-line
       state.isLoading = true;
     },
-    getCoinResponse: (state: CoinStateType, { payload }: PayloadAction) => { //eslint-disable-line
+    getCoinResponse: (state: CoinStateType, { payload }: PayloadAction) => { // eslint-disable-line
       state.coin = payload;
       state.isLoading = false;
     },
@@ -30,18 +32,39 @@ export const coinSlice = createSlice({
       state.data = payload;
     },
     updateDataSets: (state: CoinStateType, { payload }: PayloadAction<any>) => {
-      state.data?.datasets.push(payload);
+      if (state.data?.datasets.length > 1) {
+        state.data?.datasets.pop();
+      }
+      
+      const compareDataset = {
+        label: payload?.symbol,
+        data: payload?.sparkline.map((spark: string) => Number(spark)),
+        borderColor: COLORS.poisonousIceCream,
+        backgroundColor: COLORS.poisonousIceCream,
+      };
+
+      state.data?.datasets.push(compareDataset);
     },
     resetCoin: (state: CoinStateType) => {
       state.coin = null;
       state.isLoading = false;
       state.uuid = '';
       state.data = null;
+      state.comparableCoin = null;
     },
-    updateInitialGraphColor: (state:CoinStateType, { payload }: PayloadAction<any>) => {
+    updateInitialGraphColor: (state: CoinStateType, { payload }: PayloadAction<any>) => {
       state.data.datasets.borderColor = payload;
       state.data.datasets.backgroundColor = payload;
-    }
+    },
+    updateCompareCoin: (state: CoinStateType, { payload }: PayloadAction<string>) => {
+      state.isLoading = true;
+    },
+    updateCompareCoinResponse: (state: CoinStateType, { payload }: PayloadAction<any>) => {
+      state.comparableCoin = payload;
+    },
+    updateIsLoading: (state: CoinStateType) => {
+      state.isLoading = !state.isLoading;
+    },
   },
 });
 
@@ -72,6 +95,11 @@ export const makeSelectChartData = createDraftSafeSelector(
   (subState) => subState.data,
 );
 
+export const makeSelectComparableCoinData = createDraftSafeSelector(
+  coinSelectorProvider,
+  (subState) => subState.comparableCoin?.data?.coin,
+);
+
 export const {
   getCoin,
   getCoinResponse,
@@ -80,5 +108,8 @@ export const {
   updateData,
   updateDataSets,
   updateInitialGraphColor,
+  updateCompareCoin,
+  updateCompareCoinResponse,
+  updateIsLoading,
 } = coinSlice.actions;
 export default coinSlice.reducer;

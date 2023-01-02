@@ -1,19 +1,14 @@
 import React, {
   useEffect,
 } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import {
+  useDispatch,
+  useSelector,
+} from 'react-redux';
 
 import {
   useLocation,
 } from 'react-router-dom';
-import * as slice from '../../redux/CoinSlice';
-import { getUuidFromPathName } from '../../utils/helpers';
-import { makeSelectCoinData } from '../../redux/CoinSlice/index';
-import * as coinStyles from './CoinStyles';
-import { ContentWithCoinsOrNewsContainer, H1 } from '../../GlobalStyles';
-import { COLORS, OPTIONS } from '../../constants';
-
-import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -24,6 +19,19 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
+
+import { Line } from 'react-chartjs-2';
+
+import * as slice from '../../redux/CoinSlice';
+import { makeSelectCoinsSliceCoins } from '../../redux/CoinsSlice';
+import { getUuidFromPathName } from '../../utils/helpers';
+import * as coinStyles from './CoinStyles';
+import { ContentWithCoinsOrNewsContainer, H1 } from '../../GlobalStyles';
+import { OPTIONS } from '../../constants';
+
+import { COIN_OPTIONS_TITLE } from './messages';
+import Select from '../../components/SelectC';
+import CoinInfo from '../../components/CoinInfo';
 
 ChartJS.register(
   CategoryScale,
@@ -43,18 +51,30 @@ const Coin = () => {
   const uuid = getUuidFromPathName(pathname);
   const dispatch = useDispatch();
 
-  const coin = useSelector(makeSelectCoinData);
+  const coin = useSelector(slice.makeSelectCoinData);
+  const compareCoin = useSelector(slice.makeSelectComparableCoinData)
   const isLoading = useSelector(slice.makeSelectIsLoading);
   const data = useSelector(slice.makeSelectChartData);
+  const coins = useSelector(makeSelectCoinsSliceCoins);
 
-  //test
   useEffect(() => {
     dispatch(slice.setUuid(uuid));
     dispatch(slice.getCoin());
-  }, []);
 
+    return () => {
+    dispatch(slice.resetCoin());
+    }
+  }, [dispatch, location]);
 
   const isNullData = data === null;
+
+  const handleSelectChange = ({ target }) => {
+    if (target.value) {
+      dispatch(slice.updateCompareCoin(target.value));
+    }
+  };
+
+  const coinInfoData = [coin, compareCoin];
 
   return (
     <>
@@ -76,12 +96,24 @@ const Coin = () => {
             </coinStyles.CoinTitleWrapper>
             <coinStyles.CoinDescription dangerouslySetInnerHTML={{__html: (coin?.description)}} />
             {/*Radio buttons on change time period*/}
-            {/*Chart*/}
             {/*Compare datasets by uuid */}
-
-            <Line
-              options={OPTIONS}
-              data={data}
+            <coinStyles.CoinGraphOptions>
+              <H1 isBlock >
+                {COIN_OPTIONS_TITLE}
+              </H1>
+              <Select
+                onChange={handleSelectChange}
+                coins={coins}
+              />
+            </coinStyles.CoinGraphOptions>
+            <coinStyles.ChartWrapper>
+              <Line
+                options={OPTIONS}
+                data={data}
+              />
+            </coinStyles.ChartWrapper>
+            <CoinInfo
+              coinInfoData={coinInfoData}
             />
           </ContentWithCoinsOrNewsContainer>
         </coinStyles.CoinWrapper>

@@ -63,3 +63,17 @@ export const CoinDescription = styled.div`
     margin-bottom: 10px;
   }
 `
+
+export const CoinGraphOptions = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+
+  margin-bottom: 20px;
+`;
+
+export const ChartWrapper = styled.div`
+  margin-bottom: 30px;
+`;

@@ -10,8 +10,19 @@ import {
 } from '../../constants';
 import { formatCoinRequest } from '../../utils/helpers';
 import request from "../../utils/request";
-import { getCoin } from "./constants";
-import { makeSelectCoinData } from './index';
+import {
+  makeSelectComparableCoinData,
+  updateDataSets,
+  updateIsLoading,
+} from './index';
+import {
+  getCoin,
+  updateCompareCoin,
+} from './constants';
+import {
+  makeSelectCoinData,
+  updateCompareCoinResponse,
+} from './index';
 import {
   getCoinResponse,
   makeSelectUuid,
@@ -22,7 +33,7 @@ function* getCoinFromApi(): Generator {
   try {
     const uuid: unknown = yield select(makeSelectUuid);
 
-    const options ={
+    const options = {
       ...COINS_REQUEST_OPTIONS,
     }
 
@@ -50,6 +61,29 @@ function* getCoinFromApi(): Generator {
   }
 }
 
+function* compareCoin({ payload }): Generator {
+  try {
+    const options = {
+      ...COINS_REQUEST_OPTIONS,
+    };
+
+    const response = yield call(request, formatCoinRequest(payload), options);
+
+    if (response) {
+      yield put(updateCompareCoinResponse(response));
+
+      const compareCoin = yield select(makeSelectComparableCoinData);
+
+      yield put(updateDataSets(compareCoin));
+
+      yield put(updateIsLoading());
+    }
+  } catch (e) {
+    console.warn('compare error: ', e)
+  }
+}
+
 export default function* coinSaga() {
   yield takeEvery(getCoin, getCoinFromApi);
+  yield takeEvery(updateCompareCoin, compareCoin);
 }

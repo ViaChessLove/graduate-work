@@ -5,6 +5,7 @@ export interface PlaceholderProps {
 
 export interface H1Props {
   readonly marginBottom?: string;
+  readonly isBlock?: boolean;
 }
 
 export interface CoinsListProps {
@@ -47,4 +48,9 @@ export interface CoinStateType {
     labels: any,
     datasets: [],
   } | null,
+  comparableCoin?: any;
+}
+
+export interface CoinInfoProps {
+  coinInfoData: Array<any>;
 }

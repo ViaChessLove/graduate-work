@@ -11,9 +11,8 @@ import {
 } from './CoinsListStyles';
 
 const CoinsList = () => {
-
   const coins = useSelector(makeSelectCoinsSliceCoins);
-  console.log(coins);
+
   return (
     <CoinsListWrapper>
       <CoinsListContainer>
