@@ -1,4 +1,4 @@
-import { useLayoutEffect } from 'react';
+import { useEffect } from 'react';
 import {
   useDispatch,
   useSelector,
@@ -18,7 +18,7 @@ const Coins = () => {
 
   const isLoading = useSelector(makeSelectIsLoading);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     dispatch(getCoins());
   }, [location]);
 

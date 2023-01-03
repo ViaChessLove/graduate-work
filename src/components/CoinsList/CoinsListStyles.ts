@@ -30,3 +30,19 @@ export const CoinsListContainer = styled.div`
     padding-right: 20px;
   }
 `;
+
+export const CoinsListOptions = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  margin: 0 auto;
+
+  padding-top: 20px;
+
+  max-width: 750px;
+
+  @media screen and (max-width: ${SCREEN_RESOLUTIONS.laptop}) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+`;

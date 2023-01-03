@@ -1,3 +1,4 @@
+import { ChangeEventHandler } from 'react';
 export interface PlaceholderProps {
   readonly height?: string;
   readonly className?: string;
@@ -35,8 +36,9 @@ export interface ChangeProps {
 }
 
 export interface CoinsStateType {
-  readonly coins: any,
-  readonly isLoading: boolean,
+  coins: any,
+  isLoading: boolean,
+  searchParams: string,
 }
 
 export interface CoinStateType {
@@ -53,4 +55,10 @@ export interface CoinStateType {
 
 export interface CoinInfoProps {
   coinInfoData: Array<any>;
+}
+
+export interface InputProps {
+  onChange: ChangeEventHandler<HTMLInputElement>;
+  placeholder?: string;
+  value?: string;
 }

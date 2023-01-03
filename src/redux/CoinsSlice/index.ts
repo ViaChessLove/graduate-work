@@ -8,6 +8,7 @@ import {
 const initialState: CoinsStateType = {
   coins: [],
   isLoading: true,
+  searchParams: '',
 }
 
 export const coinsSlice = createSlice({
@@ -37,6 +38,9 @@ export const coinsSlice = createSlice({
         parseInt(a?.change, 10) - parseInt(b?.change, 10)
       ));
     },
+    searchCoins: (state: CoinsStateType, { payload }: PayloadAction<string>) => {
+      state.searchParams = payload;
+    },
   },
 });
 
@@ -57,6 +61,11 @@ export const makeSelectIsLoading = createDraftSafeSelector(
   (subState) => subState.isLoading,
 )
 
+export const makeSelectSearchParams = createDraftSafeSelector(
+  coinsSelectorProvider,
+  (subState) => subState.searchParams,
+)
+
 export const {
   getCoins,
   getCoinsResponse,
@@ -64,5 +73,6 @@ export const {
   sortCoinsByChangeFromLower,
   sortCoinsByRank,
   sortCoinsByRankFromLower,
+  searchCoins,
 } = coinsSlice.actions;
 export default coinsSlice.reducer;

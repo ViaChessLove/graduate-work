@@ -77,3 +77,16 @@ export const CoinGraphOptions = styled.div`
 export const ChartWrapper = styled.div`
   margin-bottom: 30px;
 `;
+
+export const PartTags = styled.div`
+  diplay: flex;
+  flex-flow: column-wrap;
+`;
+
+export const PartTag = styled.div`
+  padding: 5px;
+
+  &:before {
+    content: '#';
+  }
+`;
