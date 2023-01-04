@@ -9,6 +9,8 @@ const initialState: CoinsStateType = {
   coins: [],
   isLoading: true,
   searchParams: '',
+  totalCount: 0,
+  currentPage: 1,
 }
 
 export const coinsSlice = createSlice({
@@ -21,6 +23,13 @@ export const coinsSlice = createSlice({
     getCoinsResponse: (state: CoinsStateType, action: PayloadAction) => {
       state.coins = action.payload;
       state.isLoading = false;
+    },
+    resetCoinsSlice: (state: CoinsStateType, { payload }: PayloadAction) => {
+      state.coins = null;
+      state.isLoading = true;
+      state.searchParams = '';
+      state.totalCount = 0;
+      state.currentPage = 0;
     },
     sortCoinsByRank: (state: CoinsStateType) => {
       state.coins.data.coins = state.coins.data.coins.sort((a, b) => a?.rank - b?.rank);
@@ -41,6 +50,12 @@ export const coinsSlice = createSlice({
     searchCoins: (state: CoinsStateType, { payload }: PayloadAction<string>) => {
       state.searchParams = payload;
     },
+    updateTotalCount: (state: CoinsStateType, { payload }: PayloadAction<number>) => {
+      state.totalCount = payload;
+    },
+    updateCurrentPage: (state: CoinsStateType, { payload }: PayloadAction<number>) => {
+      state.currentPage = payload;
+    }
   },
 });
 
@@ -66,6 +81,16 @@ export const makeSelectSearchParams = createDraftSafeSelector(
   (subState) => subState.searchParams,
 )
 
+export const makeSelectTotalCount = createDraftSafeSelector(
+  coinsSelectorProvider,
+  (subState) => subState.totalCount,
+)
+
+export const makeSelectCurrentPage = createDraftSafeSelector(
+  coinsSelectorProvider,
+  (subState) => subState.currentPage,
+)
+
 export const {
   getCoins,
   getCoinsResponse,
@@ -74,5 +99,8 @@ export const {
   sortCoinsByRank,
   sortCoinsByRankFromLower,
   searchCoins,
+  resetCoinsSlice,
+  updateTotalCount,
+  updateCurrentPage,
 } = coinsSlice.actions;
 export default coinsSlice.reducer;

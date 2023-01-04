@@ -24,7 +24,11 @@ export const SCREEN_RESOLUTIONS = {
 
 export const X_RAPIDAPI_KEY = '517ae7c2b3mshca817e8d77e12f8p1ef4e2jsnbee733730bd1';
 
-export const COINS_API = 'https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=marketCap&orderDirection=desc&limit=50&offset=0';
+export const getCoinsApi = (limit: number, offset: number) => (
+  `https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=marketCap&orderDirection=desc&limit=${limit}&offset=${offset}
+`);
+
+export const COINS_API = 'https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=marketCap&orderDirection=desc&limit=100&offset=0';
 
 export const SEARCH_API = 'https://coinranking1.p.rapidapi.com/search-suggestions';
 

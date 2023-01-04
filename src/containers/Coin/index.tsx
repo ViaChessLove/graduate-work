@@ -55,14 +55,14 @@ const Coin = () => {
   const compareCoin = useSelector(slice.makeSelectComparableCoinData)
   const isLoading = useSelector(slice.makeSelectIsLoading);
   const data = useSelector(slice.makeSelectChartData);
-  const coins = useSelector(makeSelectCoinsSliceCoins);
+  const coins = useSelector(slice.makeSelectSelectCoins);
 
   useEffect(() => {
     dispatch(slice.setUuid(uuid));
     dispatch(slice.getCoin());
 
     return () => {
-    dispatch(slice.resetCoin());
+      dispatch(slice.resetCoin());
     }
   }, [dispatch, location]);
 

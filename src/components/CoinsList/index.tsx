@@ -6,6 +6,7 @@ import {
 
 import {
   makeSelectCoinsSliceCoins,
+  makeSelectTotalCount,
   makeSelectSearchParams,
   searchCoins,
 } from '../../redux/CoinsSlice/index';
@@ -19,6 +20,7 @@ import {
   CoinsListWrapper,
 } from './CoinsListStyles';
 import Input from '../Input';
+import Pagination from '../Pagination';
 
 const CoinsList = () => {
   const dispatch = useDispatch();
@@ -27,17 +29,20 @@ const CoinsList = () => {
 
   const coins = useSelector(makeSelectCoinsSliceCoins);
 
+  const totalCount = useSelector(makeSelectTotalCount);
+
   const handleChangeInput = ({ target }) => {
     dispatch(searchCoins(target.value));
   }
 
   // TODO: move search in home.
-  // TODO: add pagination, sort
+  // TODO: add pagination, sort, timeperiod
   
 
   return (
     <CoinsListWrapper>
       <CoinsListOptions>
+        {/* TODO: move to homepage */}
         <Input
           onChange={handleChangeInput}
           value={search}
@@ -77,6 +82,11 @@ const CoinsList = () => {
           </>
         )}
       </CoinsListContainer>
+      <CoinsListOptions>
+        <Pagination
+          totalCount={totalCount}
+        />
+      </CoinsListOptions>
     </CoinsListWrapper>
   )
 }

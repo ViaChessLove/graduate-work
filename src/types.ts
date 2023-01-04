@@ -39,6 +39,8 @@ export interface CoinsStateType {
   coins: any,
   isLoading: boolean,
   searchParams: string,
+  totalCount: number,
+  currentPage: number,
 }
 
 export interface CoinStateType {
@@ -50,7 +52,8 @@ export interface CoinStateType {
     labels: any,
     datasets: [],
   } | null,
-  comparableCoin?: any;
+  comparableCoin?: any,
+  selectCoins: any,
 }
 
 export interface CoinInfoProps {
@@ -61,4 +64,12 @@ export interface InputProps {
   onChange: ChangeEventHandler<HTMLInputElement>;
   placeholder?: string;
   value?: string;
+}
+
+export interface PaginationProps {
+  totalCount: number,
+}
+
+export interface PaginationItemProps {
+  isActive?: boolean,
 }

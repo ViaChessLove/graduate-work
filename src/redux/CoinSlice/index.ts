@@ -12,6 +12,7 @@ const initialState: CoinStateType = {
   uuid: '',
   data: null,
   comparableCoin: null,
+  selectCoins: null,
 }
 
 export const coinSlice = createSlice({
@@ -51,6 +52,7 @@ export const coinSlice = createSlice({
       state.uuid = '';
       state.data = null;
       state.comparableCoin = null;
+      state.selectCoins = null;
     },
     updateInitialGraphColor: (state: CoinStateType, { payload }: PayloadAction<any>) => {
       state.data.datasets.borderColor = payload;
@@ -65,6 +67,9 @@ export const coinSlice = createSlice({
     updateIsLoading: (state: CoinStateType) => {
       state.isLoading = !state.isLoading;
     },
+    updateSelectCoins: (state: CoinStateType, { payload }: PayloadAction<any>) => {
+      state.selectCoins = payload;
+    }
   },
 });
 
@@ -100,6 +105,11 @@ export const makeSelectComparableCoinData = createDraftSafeSelector(
   (subState) => subState.comparableCoin?.data?.coin,
 );
 
+export const makeSelectSelectCoins = createDraftSafeSelector(
+  coinSelectorProvider,
+  (subState) => subState.selectCoins?.data?.coins,
+)
+
 export const {
   getCoin,
   getCoinResponse,
@@ -111,5 +121,6 @@ export const {
   updateCompareCoin,
   updateCompareCoinResponse,
   updateIsLoading,
+  updateSelectCoins,
 } = coinSlice.actions;
 export default coinSlice.reducer;

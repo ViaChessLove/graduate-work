@@ -9,6 +9,7 @@ import CoinsList from '../../components/CoinsList';
 import {
   getCoins,
   makeSelectIsLoading,
+  resetCoinsSlice,
 } from '../../redux/CoinsSlice';
 
 const Coins = () => {
@@ -19,7 +20,14 @@ const Coins = () => {
   const isLoading = useSelector(makeSelectIsLoading);
 
   useEffect(() => {
-    dispatch(getCoins());
+    dispatch(getCoins({
+      limit: 10,
+      offset: 0,
+    }));
+
+    return () => {
+      dispatch(resetCoinsSlice());
+    }
   }, [location]);
 
   return (

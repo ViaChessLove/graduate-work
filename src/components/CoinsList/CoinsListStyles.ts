@@ -19,6 +19,7 @@ export const CoinsListWrapper = styled.section`
 export const CoinsListContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
   
   margin: 0 auto;
   padding-top: 20px;

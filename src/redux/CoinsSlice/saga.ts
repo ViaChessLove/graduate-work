@@ -6,7 +6,7 @@ import {
 } from 'redux-saga/effects';
 import request from '../../utils/request';
 import {
-  COINS_API,
+  getCoinsApi,
   COINS_REQUEST_OPTIONS,
   SEARCH_API,
 } from '../../constants';
@@ -14,13 +14,22 @@ import {
 import {
   getCoins, searchCoins
 } from './constants';
-import { getCoinsResponse } from '.';
+import {
+  getCoinsResponse,
+  updateTotalCount,
+} from '.';
 
-export function* getCoinsFromApi(): any {
+export function* getCoinsFromApi({ payload }): any {
   try {
-    const response = yield call(request, COINS_API, COINS_REQUEST_OPTIONS);
+    const {
+      limit,
+      offset,
+    } = payload;
+
+    const response = yield call(request, getCoinsApi(limit, offset), COINS_REQUEST_OPTIONS);
     if (response) {
-      yield put(getCoinsResponse(response))
+      yield put(getCoinsResponse(response));
+      yield put(updateTotalCount(response?.data?.stats.total));
     }
   } catch(e) {
     console.warn('coins request error:', e);
@@ -36,7 +45,8 @@ export function* searchCoinsFromApi({ payload }): any {
     const response = yield call(request, `${SEARCH_API}?query=${payload}&limit=50`, options);
 
     if (response) {
-      yield put(getCoinsResponse(response));
+      //  TODO: put in home page
+      // yield put(getCoinsResponse(response));
     }
 
     yield;

@@ -5,6 +5,7 @@ import {
   takeEvery,
 } from 'redux-saga/effects';
 import {
+  COINS_API,
   COINS_REQUEST_OPTIONS,
   COLORS,
 } from '../../constants';
@@ -14,6 +15,7 @@ import {
   makeSelectComparableCoinData,
   updateDataSets,
   updateIsLoading,
+  updateSelectCoins,
 } from './index';
 import {
   getCoin,
@@ -29,6 +31,22 @@ import {
   updateData,
 } from './index';
 
+function* updateCoins() {
+  try {
+    const options = {
+      ...COINS_REQUEST_OPTIONS,
+    };
+
+    const response = yield call(request, COINS_API, options);
+
+    if (response) {
+      yield put(updateSelectCoins(response));
+    }
+  } catch (e) {
+    console.warn(e);
+  }
+}
+
 function* getCoinFromApi(): Generator {
   try {
     const uuid: unknown = yield select(makeSelectUuid);
@@ -36,6 +54,8 @@ function* getCoinFromApi(): Generator {
     const options = {
       ...COINS_REQUEST_OPTIONS,
     }
+
+    yield updateCoins();
 
     const response = yield call(request, formatCoinRequest(uuid), options);
 
