@@ -34,13 +34,14 @@ export const CoinsListContainer = styled.div`
 
 export const CoinsListOptions = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+
+  gap: 10px;
 
   margin: 0 auto;
-
   padding-top: 20px;
 
-  max-width: 750px;
+  max-width: 650px;
 
   @media screen and (max-width: ${SCREEN_RESOLUTIONS.laptop}) {
     padding-left: 20px;

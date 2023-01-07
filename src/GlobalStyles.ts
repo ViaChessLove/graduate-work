@@ -53,7 +53,7 @@ export const ResetCSS = createGlobalStyle`
 export const Placeholder = styled.div`
   height: ${(props: PlaceholderProps) => (props.height 
     ? props.height 
-    : '0px')}
+    : '0px')};
 `;
 
 export const H1 = styled.h1`

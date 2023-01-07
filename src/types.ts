@@ -1,4 +1,8 @@
-import { ChangeEventHandler } from 'react';
+import {
+  ChangeEventHandler,
+  MouseEventHandler,
+} from 'react';
+
 export interface PlaceholderProps {
   readonly height?: string;
   readonly className?: string;
@@ -67,9 +71,13 @@ export interface InputProps {
 }
 
 export interface PaginationProps {
-  totalCount: number,
+  onClick: MouseEventHandler<HTMLDivElement>,
 }
 
 export interface PaginationItemProps {
   isActive?: boolean,
+}
+
+export interface DotProps {
+  delay?: string;
 }

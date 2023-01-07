@@ -22,6 +22,9 @@ const Footer = () => {
   const universityAndYears = `${university} ${years}`;
   return (
     <>
+      <Placeholder
+        height={'60px'}
+      />
       <FooterWrapper>
         <FooterContainer>
           <H1
@@ -34,9 +37,6 @@ const Footer = () => {
           </P>
         </FooterContainer>
       </FooterWrapper>
-      <Placeholder
-        height={'60px'}
-      />
     </>
   )
 }

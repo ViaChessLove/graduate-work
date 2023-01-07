@@ -9,4 +9,6 @@ export const InputComponent  = styled.input`
   padding: 5px;
   
   outline-width: 0;
+
+  border-radius: 10px;
 `;

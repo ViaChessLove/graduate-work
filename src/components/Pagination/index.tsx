@@ -2,12 +2,17 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { PaginationProps } from '../../types';
 import { PaginationItem, PaginationWrapper } from './styles';
-import { makeSelectCurrentPage } from '../../redux/CoinsSlice/index';
+import {
+  makeSelectCurrentPage,
+  makeSelectTotalCount,
+} from '../../redux/CoinsSlice/index';
 
 const Pagination = (props: PaginationProps) => {
   const {
-    totalCount,
+    onClick
   } = props;
+  
+  const totalCount = useSelector(makeSelectTotalCount);
 
   const currentPage = useSelector(makeSelectCurrentPage);
 
@@ -26,6 +31,7 @@ const Pagination = (props: PaginationProps) => {
           <PaginationItem
             key={page}
             isActive={isActive}
+            onClick={!isActive && onClick}
           >
             {page}
           </PaginationItem>

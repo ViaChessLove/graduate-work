@@ -1,10 +1,17 @@
 import {
   call,
   put,
+  select,
+  takeEvery,
   takeLatest,
-  throttle,
 } from 'redux-saga/effects';
 import request from '../../utils/request';
+import {
+  makeSelectTotalCount,
+  getCoins as getCoinsAction,
+  makeSelectCurrentPage,
+  makeSelectSearchParams,
+} from './index';
 import {
   getCoinsApi,
   COINS_REQUEST_OPTIONS,
@@ -12,21 +19,26 @@ import {
 } from '../../constants';
 
 import {
-  getCoins, searchCoins
+  getCoins,
+  paginateTo,
+  searchCoins
 } from './constants';
 import {
   getCoinsResponse,
+  updateCurrentPage,
   updateTotalCount,
 } from '.';
 
-export function* getCoinsFromApi({ payload }): any {
+export function* getCoinsFromApi({ payload }: any): any {
   try {
     const {
       limit,
       offset,
     } = payload;
 
-    const response = yield call(request, getCoinsApi(limit, offset), COINS_REQUEST_OPTIONS);
+    const search = yield select(makeSelectSearchParams);
+
+    const response = yield call(request, getCoinsApi(limit, offset, search), COINS_REQUEST_OPTIONS);
     if (response) {
       yield put(getCoinsResponse(response));
       yield put(updateTotalCount(response?.data?.stats.total));
@@ -42,11 +54,15 @@ export function* searchCoinsFromApi({ payload }): any {
       ...COINS_REQUEST_OPTIONS,
     };
 
-    const response = yield call(request, `${SEARCH_API}?query=${payload}&limit=50`, options);
+    const currentPage = yield select(makeSelectCurrentPage);
+
+    const offset = (currentPage - 1) * 10;
+
+    const response = yield call(request, getCoinsApi(10, offset, payload), options);
 
     if (response) {
-      //  TODO: put in home page
-      // yield put(getCoinsResponse(response));
+      yield put(getCoinsResponse(response));
+      yield put(updateTotalCount(response?.data?.stats.total));
     }
 
     yield;
@@ -55,7 +71,32 @@ export function* searchCoinsFromApi({ payload }): any {
   }
 }
 
+function* updatePage({ payload }) {
+  try {
+    const pageIntValue = parseInt(payload, 10);
+    yield put(updateCurrentPage(pageIntValue));
+
+    const total: number = yield select(makeSelectTotalCount);
+
+    const localLimit = 10;
+
+    const limit = total < localLimit
+      ? total
+      : localLimit;
+    const offset = (pageIntValue - 1)*10;
+
+    yield put(getCoinsAction({
+      limit,
+      offset,
+    }));
+
+  } catch (e) {
+    console.warn('err', e);
+  }
+}
+
 export default function*  coinsSaga() {
   yield takeLatest(getCoins, getCoinsFromApi);
   yield takeLatest(searchCoins, searchCoinsFromApi);
+  yield takeEvery(paginateTo, updatePage);
 }

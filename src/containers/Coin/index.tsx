@@ -32,6 +32,7 @@ import { OPTIONS } from '../../constants';
 import { COIN_OPTIONS_TITLE } from './messages';
 import Select from '../../components/SelectC';
 import CoinInfo from '../../components/CoinInfo';
+import Loader from '../../components/Loader';
 
 ChartJS.register(
   CategoryScale,
@@ -79,9 +80,7 @@ const Coin = () => {
   return (
     <>
       {isLoading || isNullData ? (
-        <div>
-          Loading...
-        </div>
+        <Loader />
       ) : (
         <coinStyles.CoinWrapper>
           <ContentWithCoinsOrNewsContainer>

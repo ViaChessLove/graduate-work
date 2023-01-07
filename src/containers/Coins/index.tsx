@@ -11,6 +11,7 @@ import {
   makeSelectIsLoading,
   resetCoinsSlice,
 } from '../../redux/CoinsSlice';
+import Loader from '../../components/Loader';
 
 const Coins = () => {
   const location = useLocation();
@@ -33,14 +34,10 @@ const Coins = () => {
   return (
     <>
       {isLoading && (
-        <>
-          Loading ...
-        </>
+        <Loader />
       )}
       {!isLoading && (
-        <>
-          <CoinsList />
-        </>
+        <CoinsList />
       )}
     </>
   )

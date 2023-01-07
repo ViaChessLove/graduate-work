@@ -29,7 +29,7 @@ export const coinsSlice = createSlice({
       state.isLoading = true;
       state.searchParams = '';
       state.totalCount = 0;
-      state.currentPage = 0;
+      state.currentPage = 1;
     },
     sortCoinsByRank: (state: CoinsStateType) => {
       state.coins.data.coins = state.coins.data.coins.sort((a, b) => a?.rank - b?.rank);
@@ -55,7 +55,10 @@ export const coinsSlice = createSlice({
     },
     updateCurrentPage: (state: CoinsStateType, { payload }: PayloadAction<number>) => {
       state.currentPage = payload;
-    }
+    },
+    paginateTo: (state: CoinsStateType, { payload }: PayloadAction<number>) => {
+      state.isLoading = true;
+    },
   },
 });
 
@@ -102,5 +105,6 @@ export const {
   resetCoinsSlice,
   updateTotalCount,
   updateCurrentPage,
+  paginateTo,
 } = coinsSlice.actions;
 export default coinsSlice.reducer;
