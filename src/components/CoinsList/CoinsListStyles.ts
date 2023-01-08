@@ -6,10 +6,9 @@ import {
 } from "../../constants";
 
 export const CoinsListWrapper = styled.section`
-  position: relative;
 
   width: 100%;
-  height: 100%;
+  height: max(100vh, 1000px);
 
   background-color: ${COLORS.ruskinBlueColor};
 

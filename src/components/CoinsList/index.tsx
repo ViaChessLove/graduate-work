@@ -9,6 +9,10 @@ import {
   makeSelectSearchParams,
   searchCoins,
   paginateTo,
+  updateCoinOrder,
+  makeSelectOrderBy,
+  updateOrderDirection,
+  makeSelectOrderDirection,
 } from '../../redux/CoinsSlice/index';
 
 import { CoinsListProps } from '../../types';
@@ -21,6 +25,8 @@ import {
 } from './CoinsListStyles';
 import Input from '../Input';
 import Pagination from '../Pagination';
+import Select from '../SelectC';
+import { ORDER_OPTIONS, ORDER_DIRECTIONS } from '../../constants';
 
 const CoinsList = () => {
   const dispatch = useDispatch();
@@ -29,12 +35,23 @@ const CoinsList = () => {
 
   const coins = useSelector(makeSelectCoinsSliceCoins);
 
+  const selectedOrder = useSelector(makeSelectOrderBy);
+  const selectedDirection = useSelector(makeSelectOrderDirection);
+
   const handleChangeInput = ({ target }) => {
     dispatch(searchCoins(target.value.trim(' ')));
   }
 
   const handleChangePage = ({ target }) => {
     dispatch(paginateTo(target.innerText));
+  }
+
+  const handleChangeOrder = ({ target }) => {
+    dispatch(updateCoinOrder(target.value));
+  }
+
+  const handleChangeOrderDirection = ({ target }) => {
+    dispatch(updateOrderDirection(target.value));
   }
 
   // TODO: move search in home.
@@ -49,7 +66,16 @@ const CoinsList = () => {
           value={search}
           placeholder="Search coin"
         />
-        
+        <Select
+          onChange={handleChangeOrder}
+          order={ORDER_OPTIONS}
+          currentOption={selectedOrder}
+        />
+        <Select
+          onChange={handleChangeOrderDirection}
+          order={ORDER_DIRECTIONS}
+          currentOption={selectedDirection}
+        />
       </CoinsListOptions>
       <CoinsListContainer>
         {coins?.map(({

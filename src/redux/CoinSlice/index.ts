@@ -13,6 +13,7 @@ const initialState: CoinStateType = {
   data: null,
   comparableCoin: null,
   selectCoins: null,
+  timePeriod: '24h',
 }
 
 export const coinSlice = createSlice({
@@ -53,6 +54,7 @@ export const coinSlice = createSlice({
       state.data = null;
       state.comparableCoin = null;
       state.selectCoins = null;
+      state.timePeriod = '24h';
     },
     updateInitialGraphColor: (state: CoinStateType, { payload }: PayloadAction<any>) => {
       state.data.datasets.borderColor = payload;

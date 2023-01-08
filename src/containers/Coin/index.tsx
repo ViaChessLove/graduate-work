@@ -103,6 +103,7 @@ const Coin = () => {
               <Select
                 onChange={handleSelectChange}
                 coins={coins}
+                description={'Choose coin'}
               />
             </coinStyles.CoinGraphOptions>
             <coinStyles.ChartWrapper>

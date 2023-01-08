@@ -45,19 +45,21 @@ export interface CoinsStateType {
   searchParams: string,
   totalCount: number,
   currentPage: number,
+  orderBy: string,
+  orderDirection: string,
 }
 
 export interface CoinStateType {
   coin: any,
   isLoading: boolean,
   uuid: string,
-  readonly timePeriod?: string,
   data: {
     labels: any,
     datasets: [],
   } | null,
   comparableCoin?: any,
   selectCoins: any,
+  timePeriod: string,
 }
 
 export interface CoinInfoProps {

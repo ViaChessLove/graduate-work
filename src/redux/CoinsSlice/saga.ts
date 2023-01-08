@@ -6,11 +6,15 @@ import {
   takeLatest,
 } from 'redux-saga/effects';
 import request from '../../utils/request';
+import { makeSelectOrderDirection } from './index';
 import {
   makeSelectTotalCount,
   getCoins as getCoinsAction,
   makeSelectCurrentPage,
   makeSelectSearchParams,
+  makeSelectOrderBy,
+  updateCoinOrder,
+  updateOrderDirection,
 } from './index';
 import {
   getCoinsApi,
@@ -37,8 +41,10 @@ export function* getCoinsFromApi({ payload }: any): any {
     } = payload;
 
     const search = yield select(makeSelectSearchParams);
+    const orderBy = yield select(makeSelectOrderBy);
+    const direction = yield select(makeSelectOrderDirection);
 
-    const response = yield call(request, getCoinsApi(limit, offset, search), COINS_REQUEST_OPTIONS);
+    const response = yield call(request, getCoinsApi(limit, offset, search, orderBy, direction), COINS_REQUEST_OPTIONS);
     if (response) {
       yield put(getCoinsResponse(response));
       yield put(updateTotalCount(response?.data?.stats.total));
@@ -55,10 +61,12 @@ export function* searchCoinsFromApi({ payload }): any {
     };
 
     const currentPage = yield select(makeSelectCurrentPage);
+    const orderBy = yield select(makeSelectOrderBy);
+    const direction = yield select(makeSelectOrderDirection);
 
     const offset = (currentPage - 1) * 10;
 
-    const response = yield call(request, getCoinsApi(10, offset, payload), options);
+    const response = yield call(request, getCoinsApi(10, offset, payload, orderBy, direction), options);
 
     if (response) {
       yield put(getCoinsResponse(response));
@@ -95,8 +103,59 @@ function* updatePage({ payload }) {
   }
 }
 
+function* updateOrder({ payload }): any {
+  try {
+    const options = {
+      ...COINS_REQUEST_OPTIONS,
+    };
+
+    const currentPage = yield select(makeSelectCurrentPage);
+
+    const offset = (currentPage - 1) * 10;
+
+    const search = yield select(makeSelectSearchParams);
+    const direction = yield select(makeSelectOrderDirection);
+
+    const response = yield call(request, getCoinsApi(10, offset, search, payload, direction), options);
+
+    if (response) {
+      yield put(getCoinsResponse(response));
+      yield put(updateTotalCount(response?.data?.stats.total));
+    }
+
+  } catch(e) {
+    console.warn(e);
+  }
+}
+
+function* updateDirection({ payload }): any {
+  try {
+    const options = {
+      ...COINS_REQUEST_OPTIONS,
+    };
+
+    const currentPage = yield select(makeSelectCurrentPage);
+
+    const offset = (currentPage - 1) * 10;
+
+    const search = yield select(makeSelectSearchParams);
+    const orderBy = yield select(makeSelectOrderBy);
+
+    const response = yield call(request, getCoinsApi(10, offset, search, orderBy, payload), options);
+
+    if (response) {
+      yield put(getCoinsResponse(response));
+      yield put(updateTotalCount(response?.data?.stats.total));
+    }
+  } catch(e) {
+    console.warn(e);
+  }
+}
+
 export default function*  coinsSaga() {
   yield takeLatest(getCoins, getCoinsFromApi);
   yield takeLatest(searchCoins, searchCoinsFromApi);
   yield takeEvery(paginateTo, updatePage);
+  yield takeEvery(updateCoinOrder, updateOrder);
+  yield takeEvery(updateOrderDirection, updateDirection);
 }

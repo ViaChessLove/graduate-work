@@ -11,6 +11,8 @@ const initialState: CoinsStateType = {
   searchParams: '',
   totalCount: 0,
   currentPage: 1,
+  orderBy: 'marketCap',
+  orderDirection: 'desc',
 }
 
 export const coinsSlice = createSlice({
@@ -30,6 +32,7 @@ export const coinsSlice = createSlice({
       state.searchParams = '';
       state.totalCount = 0;
       state.currentPage = 1;
+      state.orderBy = 'marketCap';
     },
     sortCoinsByRank: (state: CoinsStateType) => {
       state.coins.data.coins = state.coins.data.coins.sort((a, b) => a?.rank - b?.rank);
@@ -59,6 +62,12 @@ export const coinsSlice = createSlice({
     paginateTo: (state: CoinsStateType, { payload }: PayloadAction<number>) => {
       state.isLoading = true;
     },
+    updateCoinOrder: (state: CoinsStateType, { payload }: PayloadAction<string>) => {
+      state.orderBy = payload;
+    },
+    updateOrderDirection: (state: CoinsStateType, { payload }: PayloadAction<string>) => {
+      state.orderDirection = payload;
+    }
   },
 });
 
@@ -94,6 +103,16 @@ export const makeSelectCurrentPage = createDraftSafeSelector(
   (subState) => subState.currentPage,
 )
 
+export const makeSelectOrderBy = createDraftSafeSelector(
+  coinsSelectorProvider,
+  (subState) => subState.orderBy,
+)
+
+export const makeSelectOrderDirection = createDraftSafeSelector(
+  coinsSelectorProvider,
+  (subState) => subState.orderDirection,
+)
+
 export const {
   getCoins,
   getCoinsResponse,
@@ -106,5 +125,7 @@ export const {
   updateTotalCount,
   updateCurrentPage,
   paginateTo,
+  updateCoinOrder,
+  updateOrderDirection
 } = coinsSlice.actions;
 export default coinsSlice.reducer;

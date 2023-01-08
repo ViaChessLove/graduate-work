@@ -10,19 +10,33 @@ const Select = (props: SelectProps) => {
   const {
     onChange,
     coins,
+    description,
+    order,
+    currentOption,
   } = props;
   
   return (
     <SelectComponent
       onChange={onChange}
+      value={currentOption}
     >
-      <SelectOption value="">
-        Choose coin
-      </SelectOption>
-      {coins?.map(({ uuid, name}) => (
+      {description && (
+        <SelectOption value="">
+          {description}
+        </SelectOption>
+      )}
+      {coins?.map(({ uuid, name }) => (
         <SelectOption
          key={uuid}
          value={uuid}
+        >
+          {name}
+        </SelectOption>
+      ))}
+      {order?.map(({ type, name }) => (
+        <SelectOption
+          key={type}
+          value={type}
         >
           {name}
         </SelectOption>
