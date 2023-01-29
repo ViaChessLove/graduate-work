@@ -23,7 +23,6 @@ import {
 import { Line } from 'react-chartjs-2';
 
 import * as slice from '../../redux/CoinSlice';
-import { makeSelectCoinsSliceCoins } from '../../redux/CoinsSlice';
 import { getUuidFromPathName } from '../../utils/helpers';
 import * as coinStyles from './CoinStyles';
 import { ContentWithCoinsOrNewsContainer, H1 } from '../../GlobalStyles';
@@ -94,8 +93,6 @@ const Coin = () => {
               />
             </coinStyles.CoinTitleWrapper>
             <coinStyles.CoinDescription dangerouslySetInnerHTML={{__html: (coin?.description)}} />
-            {/*Radio buttons on change time period*/}
-            {/*Compare datasets by uuid */}
             <coinStyles.CoinGraphOptions>
               <H1 isBlock >
                 {COIN_OPTIONS_TITLE}

@@ -60,7 +60,10 @@ export function* searchCoinsFromApi({ payload }): any {
       ...COINS_REQUEST_OPTIONS,
     };
 
+    const total = yield select(makeSelectTotalCount);
+
     const currentPage = yield select(makeSelectCurrentPage);
+
     const orderBy = yield select(makeSelectOrderBy);
     const direction = yield select(makeSelectOrderDirection);
 

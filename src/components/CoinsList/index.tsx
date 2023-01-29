@@ -54,10 +54,6 @@ const CoinsList = () => {
     dispatch(updateOrderDirection(target.value));
   }
 
-  // TODO: move search in home.
-  // TODO: add pagination, sort (orderby), timeperiod
-  
-
   return (
     <CoinsListWrapper>
       <CoinsListOptions>
@@ -92,7 +88,7 @@ const CoinsList = () => {
           coinIndex: number,
         ) => (
           <Coin
-            key={`coin--${coinIndex}`}
+            key={`coin--${uuid}--${price}`}
             name={name}
             btcPrice={btcPrice}
             iconUrl={iconUrl}
