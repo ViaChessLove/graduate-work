@@ -2,7 +2,7 @@ import createSagaMiddleware from '@redux-saga/core';
 import { configureStore } from '@reduxjs/toolkit';
 import coinsSlice from './CoinsSlice';
 import coinSlice from './CoinSlice';
-import newsSlice from './NewsSlice';
+import excangeSlice from './ExcangeSlice';
 
 import coinsSaga from './CoinsSlice/saga';
 import coinSaga from './CoinSlice/saga';
@@ -14,7 +14,7 @@ export const store = configureStore({
     reducer: {
       coins: coinsSlice,
       coin: coinSlice,
-      news: newsSlice,
+      excange: excangeSlice,
     },
     middleware: [sagaMiddleWare],
 });

@@ -1,5 +1,5 @@
 import Coins from './containers/Coins';
-import News from './containers/News';
+import Excange from './containers/Excange';
 import NotFound from './containers/NotFound';
 import Coin from './containers/Coin';
 import Home from './containers/Home';
@@ -18,8 +18,8 @@ export const routes: RouteProps[] = [
     index: false,
   },
   {
-    path: '/news',
-    element: News,
+    path: '/excanges',
+    element: Excange,
     index: false,
   },
   {

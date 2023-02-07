@@ -81,7 +81,7 @@ export const P = styled.p`
   font-weight: 500;
 `;
 
-export const ContentWithCoinsOrNewsContainer = styled.div`
+export const ContentWithCoinsOrExcangeContainer = styled.div`
   display: flex;
   flex-flow: column nowrap;
 

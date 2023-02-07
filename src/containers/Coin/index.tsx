@@ -25,7 +25,7 @@ import { Line } from 'react-chartjs-2';
 import * as slice from '../../redux/CoinSlice';
 import { getUuidFromPathName } from '../../utils/helpers';
 import * as coinStyles from './CoinStyles';
-import { ContentWithCoinsOrNewsContainer, H1 } from '../../GlobalStyles';
+import { ContentWithCoinsOrExcangeContainer, H1 } from '../../GlobalStyles';
 import { OPTIONS } from '../../constants';
 
 import { COIN_OPTIONS_TITLE } from './messages';
@@ -82,7 +82,7 @@ const Coin = () => {
         <Loader />
       ) : (
         <coinStyles.CoinWrapper>
-          <ContentWithCoinsOrNewsContainer>
+          <ContentWithCoinsOrExcangeContainer>
             <coinStyles.CoinTitleWrapper>
               <H1>
                 {coin?.name}
@@ -112,7 +112,7 @@ const Coin = () => {
             <CoinInfo
               coinInfoData={coinInfoData}
             />
-          </ContentWithCoinsOrNewsContainer>
+          </ContentWithCoinsOrExcangeContainer>
         </coinStyles.CoinWrapper>
       )}
     </>

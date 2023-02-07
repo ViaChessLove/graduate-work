@@ -41,7 +41,7 @@ export const SEARCH_API = 'https://coinranking1.p.rapidapi.com/search-suggestion
 
 export const COIN_API_URL = 'https://coinranking1.p.rapidapi.com/coin/';
 
-export const NEWS_API = 'https://blockchain-news1.p.rapidapi.com/news/NDTV';
+export const EXCANGE_API = 'https://blockchain-excange1.p.rapidapi.com/excange/NDTV';
 
 export const COINS_REQUEST_OPTIONS = {
   method: 'GET',
@@ -51,11 +51,11 @@ export const COINS_REQUEST_OPTIONS = {
   },
 };
 
-export const NEWS_REQUEST_OPTIONS = {
+export const EXCANGE_REQUEST_OPTIONS = {
   method: 'GET',
 	headers: {
 		'X-RapidAPI-Key': X_RAPIDAPI_KEY,
-		'X-RapidAPI-Host': 'blockchain-news1.p.rapidapi.com'
+		'X-RapidAPI-Host': 'blockchain-excange1.p.rapidapi.com'
 	},
 };
 
