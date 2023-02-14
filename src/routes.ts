@@ -1,5 +1,5 @@
 import Coins from './containers/Coins';
-import Excange from './containers/Excange';
+import Exchange from './containers/Exchange';
 import NotFound from './containers/NotFound';
 import Coin from './containers/Coin';
 import Home from './containers/Home';
@@ -18,8 +18,8 @@ export const routes: RouteProps[] = [
     index: false,
   },
   {
-    path: '/excanges',
-    element: Excange,
+    path: '/exchanges',
+    element: Exchange,
     index: false,
   },
   {

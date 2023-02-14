@@ -10,7 +10,7 @@
       https://rapidapi.com/Coinranking/api/coinranking1 - Coins api
     </li>
     <li>
-      https://rapidapi.com/noobbot12367/api/blockchain-excange1/ - Excange
+      https://rapidapi.com/noobbot12367/api/blockchain-exchange1/ - Exchange
     </li>
   </ul>
 </div>

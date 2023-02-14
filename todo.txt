@@ -15,7 +15,7 @@
       {/* TODO: SEARCH INPUT */}
       {/* TODO: SORT INPUT */}
       {/* TODO: PAGINATION INPUT */}
-      // TODO: EXCANGE LIST
+      // TODO: EXCHANGE LIST
       // TODO: HOMEPAGE
       // TODO: GRAPHS IN SEPERATE CONTAINER
       // TODO: LAYOUT FOR coin

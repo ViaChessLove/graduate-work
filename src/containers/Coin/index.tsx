@@ -1,5 +1,8 @@
 import React, {
+  FC,
   useEffect,
+  useRef,
+  useState,
 } from 'react';
 import {
   useDispatch,
@@ -20,18 +23,21 @@ import {
   Legend,
 } from 'chart.js';
 
+import { toPng } from 'html-to-image';
+
 import { Line } from 'react-chartjs-2';
 
 import * as slice from '../../redux/CoinSlice';
 import { getUuidFromPathName } from '../../utils/helpers';
 import * as coinStyles from './CoinStyles';
-import { ContentWithCoinsOrExcangeContainer, H1 } from '../../GlobalStyles';
+import { ContentWithCoinsOrExchangeContainer, H1 } from '../../GlobalStyles';
 import { OPTIONS } from '../../constants';
 
 import { COIN_OPTIONS_TITLE } from './messages';
 import Select from '../../components/SelectC';
 import CoinInfo from '../../components/CoinInfo';
 import Loader from '../../components/Loader';
+import Button from '../../components/Button';
 
 ChartJS.register(
   CategoryScale,
@@ -43,8 +49,13 @@ ChartJS.register(
   Legend
 );
 
-const Coin = () => {
+
+
+const Coin: FC = () => {
   const location = useLocation();
+
+  const graphRef = useRef<HTMLDivElement>(null);
+  const [isDisabledButton, setIsDisabledButton] = useState(false);
 
   const { pathname } = location;
 
@@ -74,6 +85,31 @@ const Coin = () => {
     }
   };
 
+  const handleDownloadGraphs = () => {
+    if (!graphRef) return;
+
+    setIsDisabledButton(true);
+
+    toPng(graphRef.current, { cacheBust: true })
+      .then((url) => {
+        const link = document.createElement('a');
+
+        const date = new Date();
+        const currentTime = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+
+        link.download = compareCoin
+          ? `${currentTime}-${coin.name}-compared-${compareCoin.name}.png`
+          : `${currentTime}-${coin.name}.png`;
+        link.href = url;
+        link.click();
+        setIsDisabledButton(false);
+      })
+      .catch((e) => {
+        setIsDisabledButton(false);
+        alert('error', e);
+      });
+  };
+
   const coinInfoData = [coin, compareCoin];
 
   return (
@@ -82,7 +118,7 @@ const Coin = () => {
         <Loader />
       ) : (
         <coinStyles.CoinWrapper>
-          <ContentWithCoinsOrExcangeContainer>
+          <ContentWithCoinsOrExchangeContainer>
             <coinStyles.CoinTitleWrapper>
               <H1>
                 {coin?.name}
@@ -93,6 +129,12 @@ const Coin = () => {
               />
             </coinStyles.CoinTitleWrapper>
             <coinStyles.CoinDescription dangerouslySetInnerHTML={{__html: (coin?.description)}} />
+            <Button
+              disabled={isDisabledButton}
+              onClick={handleDownloadGraphs}
+            >
+              Download graphs
+            </Button>
             <coinStyles.CoinGraphOptions>
               <H1 isBlock >
                 {COIN_OPTIONS_TITLE}
@@ -103,16 +145,18 @@ const Coin = () => {
                 description={'Choose coin'}
               />
             </coinStyles.CoinGraphOptions>
-            <coinStyles.ChartWrapper>
-              <Line
-                options={OPTIONS}
-                data={data}
+            <coinStyles.PngWrapper ref={graphRef}>
+              <coinStyles.ChartWrapper>
+                <Line
+                  options={OPTIONS}
+                  data={data}
+                />
+              </coinStyles.ChartWrapper>
+              <CoinInfo
+                coinInfoData={coinInfoData}
               />
-            </coinStyles.ChartWrapper>
-            <CoinInfo
-              coinInfoData={coinInfoData}
-            />
-          </ContentWithCoinsOrExcangeContainer>
+            </coinStyles.PngWrapper>
+          </ContentWithCoinsOrExchangeContainer>
         </coinStyles.CoinWrapper>
       )}
     </>

@@ -6,8 +6,8 @@ export const HEADER_MESSAGES = {
       container: '/coins',
     },
     {
-      title: 'excanges',
-      container: '/excanges'
+      title: 'exchanges',
+      container: '/exchanges'
     },
   ],
 };

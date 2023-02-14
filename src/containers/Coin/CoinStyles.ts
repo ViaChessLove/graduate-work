@@ -12,6 +12,11 @@ export const CoinWrapper = styled.div`
   height: 100%;
 `;
 
+export const PngWrapper = styled.div`
+  background-color: ${COLORS.white};
+  padding: 10px 10px;
+`;
+
 export const CoinTitleWrapper = styled.div`
   display: flex;
   justify-content: space-between;
