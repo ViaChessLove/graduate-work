@@ -13,6 +13,12 @@ import {
 } from '../../redux/ExchangeSlice';
 
 import Loader from '../../components/Loader';
+import {
+  CoinsListContainer,
+  CoinsListWrapper,
+} from '../../components/CoinsList/CoinsListStyles';
+import { CoinImageContent, CoinNameContent, ExchangeContainer, ExchangeWrapper } from '../../components/CoinItem/CoinStyles';
+import ExchangeItem from '../../components/ExchangeItem';
 
 const Exchange: FC = () => {
   const dispatch = useDispatch();
@@ -35,17 +41,17 @@ const Exchange: FC = () => {
         ? (
           <Loader />
         ) : (
-          <div>
-            {exchanges?.map((exchange) => (
-              <div key={exchange.uuid}>
-                {exchange.uuid}
-                {exchange.name}
-                <img src={exchange.iconUrl} />
-              </div>
-            ))}
-            {exchanges && exchanges.length}
-          </div>
-
+          <CoinsListWrapper>
+            <CoinsListContainer>
+              {exchanges?.map(({ uuid, name, iconUrl}) => (
+                <ExchangeItem
+                  key={uuid}
+                  name={name}
+                  iconUrl={iconUrl}
+                />
+              ))}
+            </CoinsListContainer>
+          </CoinsListWrapper>
         )
       }
     </>

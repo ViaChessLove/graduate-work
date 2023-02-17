@@ -41,6 +41,47 @@ export const CoinContainer = styled(Link)`
   }
 `;
 
+export const ExchangeWrapper = styled.div`
+  position: relative;
+  
+  transition: .5s ease-in-out;
+
+  border-radius: 20px;
+
+  background-color: ${COLORS.white};
+  color: ${COLORS.ruskinBlueColor};
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+  text-decoration: none;
+
+  width: 40%;
+  
+  padding: 20px;
+  margin-bottom: 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:nth-child(2n) {
+    margin-left: 30px;
+  }
+
+  @media screen and (max-width: ${SCREEN_RESOLUTIONS.laptop}) {
+    width: 100%;
+
+    &:nth-child(2n) {
+      margin-left: unset;
+    }
+  }
+`;
+
+export const ExchangeContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 export const CoinImageContent = styled.img`
   width: 50px;
   height: 50px;

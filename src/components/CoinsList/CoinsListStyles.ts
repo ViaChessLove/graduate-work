@@ -8,7 +8,8 @@ import {
 export const CoinsListWrapper = styled.section`
 
   width: 100%;
-  height: max(100vh, 1000px);
+  height: max(100vh, 100%);
+  padding-bottom: 20px;
 
   background-color: ${COLORS.ruskinBlueColor};
 
@@ -45,5 +46,10 @@ export const CoinsListOptions = styled.div`
   @media screen and (max-width: ${SCREEN_RESOLUTIONS.laptop}) {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  @media screen and (max-width: ${SCREEN_RESOLUTIONS.mobileL}) {
+    flex-direction: column;
+    align-items: center;
   }
 `;
