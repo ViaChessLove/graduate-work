@@ -55,6 +55,7 @@ export const ExchangeWrapper = styled.div`
   text-decoration: none;
 
   width: 40%;
+  height: fit-content;
   
   padding: 20px;
   margin-bottom: 20px;

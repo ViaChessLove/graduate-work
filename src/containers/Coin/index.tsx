@@ -112,6 +112,10 @@ const Coin: FC = () => {
 
   const coinInfoData = [coin, compareCoin];
 
+  const handleAddCoin = () => {
+    localStorage.setItem('favoriteCoin', uuid);
+  }
+
   return (
     <>
       {isLoading || isNullData ? (
@@ -129,6 +133,11 @@ const Coin: FC = () => {
               />
             </coinStyles.CoinTitleWrapper>
             <coinStyles.CoinDescription dangerouslySetInnerHTML={{__html: (coin?.description)}} />
+            <Button
+              onClick={handleAddCoin}
+            >
+              Add in favorites
+            </Button>
             <Button
               disabled={isDisabledButton}
               onClick={handleDownloadGraphs}

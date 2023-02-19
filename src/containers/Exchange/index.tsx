@@ -17,8 +17,8 @@ import {
   CoinsListContainer,
   CoinsListWrapper,
 } from '../../components/CoinsList/CoinsListStyles';
-import { CoinImageContent, CoinNameContent, ExchangeContainer, ExchangeWrapper } from '../../components/CoinItem/CoinStyles';
 import ExchangeItem from '../../components/ExchangeItem';
+import { formatPrice } from '../../utils/helpers';
 
 const Exchange: FC = () => {
   const dispatch = useDispatch();
@@ -43,11 +43,25 @@ const Exchange: FC = () => {
         ) : (
           <CoinsListWrapper>
             <CoinsListContainer>
-              {exchanges?.map(({ uuid, name, iconUrl}) => (
+              {exchanges?.map(({
+                uuid,
+                name,
+                iconUrl,
+                verified,
+                recommended,
+                price,
+                coinrankingUrl,
+                numberOfMarkets,
+              }) => (
                 <ExchangeItem
                   key={uuid}
                   name={name}
                   iconUrl={iconUrl}
+                  verified={verified}
+                  recommended={recommended}
+                  price={Number(formatPrice(price))}
+                  coinrankingUrl={coinrankingUrl}
+                  numberOfMarkets={numberOfMarkets}
                 />
               ))}
             </CoinsListContainer>
