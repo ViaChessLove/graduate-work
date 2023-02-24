@@ -7,8 +7,8 @@ const formatDescription = (description: string): string => (
   description.length > 2000 ? `${description.slice(0,121)}...` : description
 );
 
-const formatCoinRequest = (uuid: string): string => (
-  `${COIN_API_URL}${uuid}`
+const formatCoinRequest = (uuid: string, timePeriod = '24h'): string => (
+  `${COIN_API_URL}${uuid}?timePeriod=${timePeriod}`
 );
 
 const getUuidFromPathName = (path: string): string => path.split('/')[2];

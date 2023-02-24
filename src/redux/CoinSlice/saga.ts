@@ -20,6 +20,7 @@ import {
 import {
   getCoin,
   updateCompareCoin,
+  updateTimePeriod,
 } from './constants';
 import {
   makeSelectCoinData,
@@ -103,7 +104,42 @@ function* compareCoin({ payload }): Generator {
   }
 }
 
+function* updateCoinWithNewTimePeriod({ payload }) {
+  try {
+    const uuid: unknown = yield select(makeSelectUuid);
+
+    const options = {
+      ...COINS_REQUEST_OPTIONS,
+    }
+
+    yield updateCoins();
+
+    const response = yield call(request, formatCoinRequest(uuid, payload), options);
+
+    if (response) {
+      yield put(getCoinResponse(response));
+
+      const coin = yield select(makeSelectCoinData);
+      
+      const labels = coin?.sparkline.map((spark: string, sparkIndex: number) => `${sparkIndex}h`);
+      
+      yield put(updateData({
+        labels,
+        datasets: [{
+          label: coin?.symbol,
+          data: coin?.sparkline.map((spark: string) => Number(spark)),
+          borderColor: COLORS.bioticGrasp,
+          backgroundColor: COLORS.bioticGrasp,
+        }],
+      }));
+    }
+  } catch (e) {
+    console.warn(e);
+  }
+}
+
 export default function* coinSaga() {
   yield takeEvery(getCoin, getCoinFromApi);
   yield takeEvery(updateCompareCoin, compareCoin);
+  yield takeEvery(updateTimePeriod, updateCoinWithNewTimePeriod);
 }

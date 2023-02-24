@@ -33,6 +33,9 @@ export const coinSlice = createSlice({
     updateData: (state: CoinStateType, { payload }: PayloadAction<any>) => {
       state.data = payload;
     },
+    updateTimePeriod: (state: CoinStateType, { payload }: PayloadAction<string>) => {
+      state.timePeriod = payload;
+    },
     updateDataSets: (state: CoinStateType, { payload }: PayloadAction<any>) => {
       if (state.data?.datasets.length > 1) {
         state.data?.datasets.pop();
@@ -112,6 +115,11 @@ export const makeSelectSelectCoins = createDraftSafeSelector(
   (subState) => subState.selectCoins?.data?.coins,
 )
 
+export const makeSelectTimePeriod = createDraftSafeSelector(
+  coinSelectorProvider,
+  (subState) => subState.timePeriod,
+)
+
 export const {
   getCoin,
   getCoinResponse,
@@ -124,5 +132,6 @@ export const {
   updateCompareCoinResponse,
   updateIsLoading,
   updateSelectCoins,
+  updateTimePeriod,
 } = coinSlice.actions;
 export default coinSlice.reducer;

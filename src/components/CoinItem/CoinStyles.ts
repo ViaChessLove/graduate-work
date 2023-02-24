@@ -54,7 +54,7 @@ export const ExchangeWrapper = styled.div`
 
   text-decoration: none;
 
-  width: 40%;
+  width: 100%;
   height: fit-content;
   
   padding: 20px;
@@ -62,18 +62,6 @@ export const ExchangeWrapper = styled.div`
 
   &:hover {
     cursor: pointer;
-  }
-
-  &:nth-child(2n) {
-    margin-left: 30px;
-  }
-
-  @media screen and (max-width: ${SCREEN_RESOLUTIONS.laptop}) {
-    width: 100%;
-
-    &:nth-child(2n) {
-      margin-left: unset;
-    }
   }
 `;
 

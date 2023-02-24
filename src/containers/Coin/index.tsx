@@ -68,8 +68,13 @@ const Coin: FC = () => {
   const data = useSelector(slice.makeSelectChartData);
   const coins = useSelector(slice.makeSelectSelectCoins);
 
+  const [isFavorite, setFavorite] = useState(false);
+
   useEffect(() => {
     dispatch(slice.setUuid(uuid));
+
+    setFavorite(uuid === localStorage.getItem('favoriteCoin'));
+
     dispatch(slice.getCoin());
 
     return () => {
@@ -114,6 +119,12 @@ const Coin: FC = () => {
 
   const handleAddCoin = () => {
     localStorage.setItem('favoriteCoin', uuid);
+    setFavorite(!isFavorite);
+  }
+
+  const handleRemoveCoin = () => {
+    localStorage.removeItem('favoriteCoin');
+    setFavorite(!isFavorite);
   }
 
   return (
@@ -133,11 +144,21 @@ const Coin: FC = () => {
               />
             </coinStyles.CoinTitleWrapper>
             <coinStyles.CoinDescription dangerouslySetInnerHTML={{__html: (coin?.description)}} />
-            <Button
-              onClick={handleAddCoin}
-            >
-              Add in favorites
-            </Button>
+            {isFavorite ? (
+              <Button
+                disabled={false}
+                onClick={handleRemoveCoin}
+              >
+                Remove from favorites
+              </Button>
+            ) : (
+              <Button
+                disabled={false}
+                onClick={handleAddCoin}
+              >
+                Add in favorites
+              </Button>
+            )}
             <Button
               disabled={isDisabledButton}
               onClick={handleDownloadGraphs}

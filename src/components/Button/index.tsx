@@ -7,6 +7,7 @@ interface ButtonProps {
   children: string,
   ref?: React.RefObject<HTMLButtonElement>,
   disabled: boolean,
+  style?: React.CSSProperties,
 }
 
 const ButtonWrapper = styled.button`
@@ -40,13 +41,15 @@ const Button: FC<ButtonProps> = ({
   onClick,
   children,
   ref,
-  disabled
+  disabled,
+  style,
 }) => {
   return (
     <ButtonWrapper
       disabled={disabled}
       ref={ref}
       onClick={onClick}
+      style={style}
     >
       {children}
     </ButtonWrapper>

@@ -62,6 +62,7 @@ const Exchange: FC = () => {
                   price={Number(formatPrice(price))}
                   coinrankingUrl={coinrankingUrl}
                   numberOfMarkets={numberOfMarkets}
+                  uuid={uuid}
                 />
               ))}
             </CoinsListContainer>
