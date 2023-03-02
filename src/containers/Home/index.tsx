@@ -153,7 +153,7 @@ const Home = () => {
     setIsFavoritesCleared(true);
   };
   
-  return(
+  return (
     <HomeListWrapper>
       <HomeListContainer>
         {!hasFavoriteCoin && !favoriteExchange && (
