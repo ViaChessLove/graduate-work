@@ -39,7 +39,7 @@
     <entity-ids>
       <counter>
         <item-type type-id="group" type="Group" />
-        <value>641</value>
+        <value>647</value>
       </counter>
       <counter>
         <item-type type-id="actor" type="Actor" />
@@ -138,6 +138,16 @@
         <phone-number />
         <description />
         <color>#00000000</color>
+        <working-schedule uid="ws-05256e2f2d4048c0b30bc7d629c635bd" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
+      </person>
+      <person id="">
+        <first-name />
+        <last-name>vyacheslav</last-name>
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
       </person>
     </persons>
     <teams />
@@ -169,7 +179,7 @@
       </meta>
       <abstract-items />
       <sub-models />
-      <diagram type="uml-usecase" id="p9eca6fd3c8044eca9e3ec7f2c1e388ec_153567620" name="UseCaseDiagram1" order-index="1" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-field-tags="true" show-empty-compartments="true" show-special-indicators="false" show-rules="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-visibility-sign="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-data="true" show-description="false" show-field-description="false" auto-routed-paths="false" default-line-style="default" view-location="0,-137" zoom="0.7">
+      <diagram type="uml-usecase" id="p9eca6fd3c8044eca9e3ec7f2c1e388ec_153567620" name="UseCaseDiagram1" order-index="1" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-field-tags="true" show-empty-compartments="true" show-special-indicators="false" show-rules="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-visibility-sign="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-data="true" show-description="false" show-field-description="false" auto-routed-paths="false" default-line-style="default" view-location="0,-117" zoom="0.6">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -225,32 +235,32 @@
           </item>
           <item id="adc949dde6a94149a52a3246b2a8d041" cid="REL001" type="relationship" name="" style-class="" change-tracking-state="added" creator="" creation-date="02/13/2023 20:59:30" from="b75be8f549ff4e48a700ddff2928f695" to="691788eac5234d7380b7f37bc4797f2b" visibility="package">
             <relation from="b75be8f549ff4e48a700ddff2928f695" to="691788eac5234d7380b7f37bc4797f2b" derived="false">
-              <start-role id="umlar-6e89cb9a-413b-4323-b461-881273c8da76" name="" navigability="" association-type="association" visibility="private" />
-              <end-role id="umlar-a7c16cd7-657e-40b4-a06f-fcf9c701c98b" name="" navigability="" association-type="association" visibility="private" />
+              <start-role id="umlar-2e9e4781-9547-43ef-a0f6-a5234d66f243" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-d44461f7-c949-4ac6-8cb5-6b76a34444e8" name="" navigability="" association-type="association" visibility="private" />
             </relation>
           </item>
           <item id="f9f65af6c301436e98bcb02243ea26cb" cid="REL002" type="relationship" name="" style-class="" change-tracking-state="added" creator="" creation-date="02/13/2023 20:59:46" from="b75be8f549ff4e48a700ddff2928f695" to="di0275ec107a354987a340516d75dc00252008" visibility="package">
             <relation from="b75be8f549ff4e48a700ddff2928f695" to="di0275ec107a354987a340516d75dc00252008" derived="false">
-              <start-role id="umlar-f90c98bc-5ba9-40db-815b-e9216552b9a1" name="" navigability="" association-type="association" visibility="private" />
-              <end-role id="umlar-d653cc87-7219-4270-860a-2743fa46f466" name="" navigability="" association-type="association" visibility="private" />
+              <start-role id="umlar-30eaeff2-85a1-4999-bde6-65e1208ddad9" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-00af5bc5-18ef-4727-a675-80829ec4d95d" name="" navigability="" association-type="association" visibility="private" />
             </relation>
           </item>
           <item id="330e5cfcfb7c48e4b6717b994f79bcd0" cid="REL003" type="relationship" name="" style-class="" change-tracking-state="added" creator="" creation-date="02/13/2023 20:59:54" from="e6d428a2f83942e393fae450ad21ce9b" to="b75be8f549ff4e48a700ddff2928f695" visibility="package">
             <relation from="e6d428a2f83942e393fae450ad21ce9b" to="b75be8f549ff4e48a700ddff2928f695" derived="false">
-              <start-role id="umlar-1758b5b5-3688-4390-b973-ca790ad4f4f4" name="" navigability="" association-type="association" visibility="private" />
-              <end-role id="umlar-fc518e0f-2ae5-4395-a8ea-bd0eac1c342f" name="" navigability="" association-type="association" visibility="private" />
+              <start-role id="umlar-e055bc87-d801-4899-a1ef-9de85515ee3c" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-1ca09070-1247-4ad2-b379-1d8ecb427a95" name="" navigability="" association-type="association" visibility="private" />
             </relation>
           </item>
           <item id="426b79d6e12e41c7b52164d90aae3ad7" cid="REL004" type="relationship" name="" style-class="" change-tracking-state="added" creator="" creation-date="02/13/2023 21:00:00" from="21c84de0f10a4776bd6887e8b950032e" to="b75be8f549ff4e48a700ddff2928f695" visibility="package">
             <relation from="21c84de0f10a4776bd6887e8b950032e" to="b75be8f549ff4e48a700ddff2928f695" derived="false">
-              <start-role id="umlar-0941e809-e7a8-4b93-a1d6-c58c6d1ddef9" name="" navigability="" association-type="association" visibility="private" />
-              <end-role id="umlar-f711d929-0fe6-4fc6-b254-53dcbdbc81d8" name="" navigability="" association-type="association" visibility="private" />
+              <start-role id="umlar-4925d705-7cac-4dbd-8577-86218ebe7f68" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-7ada3827-8a0c-4e7f-b591-a1dd060104a7" name="" navigability="" association-type="association" visibility="private" />
             </relation>
           </item>
           <item id="6ca1a97e0b1b49b7bfa1a59ef12f3db5" cid="REL006" type="relationship" name="" style-class="" change-tracking-state="added" creator="" creation-date="02/13/2023 21:00:41" from="di21e73df006b842c4ad96662d2ced7c184867" to="b75be8f549ff4e48a700ddff2928f695" visibility="package">
             <relation from="di21e73df006b842c4ad96662d2ced7c184867" to="b75be8f549ff4e48a700ddff2928f695" derived="false">
-              <start-role id="umlar-5a377f0c-5b60-4de0-8198-bfc143226da3" name="" navigability="" association-type="association" visibility="private" />
-              <end-role id="umlar-e35fc839-f7cc-49c2-aed4-9edae59761a3" name="" navigability="" association-type="association" visibility="private" />
+              <start-role id="umlar-b6ba78c9-9530-4676-bb34-b40c72bcded9" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-5b46297d-f44f-406e-a3f8-f9fc14bb5109" name="" navigability="" association-type="association" visibility="private" />
             </relation>
           </item>
           <item id="70729ea557c74734af53c759a1e55870" cid="INC002" type="include" name="" style-class="" change-tracking-state="added" creator="" creation-date="02/18/2023 19:06:00" from="2b6a3a1fc17246a58f649df4f3301f89" to="691788eac5234d7380b7f37bc4797f2b" visibility="package">
@@ -266,15 +276,15 @@
               <stakeholders />
             </use-case>
           </item>
-          <item id="a710bf68651541a496c5b7cd9f6ae4c2" cid="UC007" type="use-case" name="Добавить крипто-валюту в любимые" style-class="" owner="dda4b28cee0a4fa485897b4cf552b868" change-tracking-state="added" creator="" creation-date="02/25/2023 18:30:23">
+          <item id="a710bf68651541a496c5b7cd9f6ae4c2" cid="UC007" type="use-case" name="Добавить крипто-валюту в избранное" style-class="" owner="dda4b28cee0a4fa485897b4cf552b868" change-tracking-state="added" creator="" creation-date="02/25/2023 18:30:23" visibility="undefined">
             <use-case>
               <stakeholders />
             </use-case>
           </item>
           <item id="c673baef6bd34bc6959aa79aa93ffad9" cid="REL007" type="relationship" name="" style-class="" change-tracking-state="added" creator="" creation-date="02/25/2023 18:31:00" from="a710bf68651541a496c5b7cd9f6ae4c2" to="b75be8f549ff4e48a700ddff2928f695" visibility="package">
             <relation from="a710bf68651541a496c5b7cd9f6ae4c2" to="b75be8f549ff4e48a700ddff2928f695" derived="false">
-              <start-role id="umlar-a92f23e0-d0b6-48bc-af1b-ec08010ab210" name="" navigability="" association-type="association" visibility="private" />
-              <end-role id="umlar-029934fa-5c3e-4192-9e16-0d8795f9a03f" name="" navigability="" association-type="association" visibility="private" />
+              <start-role id="umlar-be5b7762-7298-4efe-8e62-e254df61e936" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-08f38da8-e5e0-4714-873a-42439f7b12b2" name="" navigability="" association-type="association" visibility="private" />
             </relation>
           </item>
         </abstract-items>
@@ -404,7 +414,7 @@
           </item>
         </layer>
       </diagram>
-      <diagram type="data-flow" id="pf52db1d27f9b4c01b7105d3924e52f24_671801067" name="DataFlowDiagram1" order-index="3" overview-order-index="1" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-field-tags="true" show-empty-compartments="true" show-special-indicators="false" show-rules="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-visibility-sign="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-data="true" show-description="false" show-field-description="false" auto-routed-paths="false" default-line-style="default" view-location="-63,0" zoom="0.7">
+      <diagram type="data-flow" id="pf52db1d27f9b4c01b7105d3924e52f24_671801067" name="DataFlowDiagram1" order-index="3" overview-order-index="1" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-field-tags="true" show-empty-compartments="true" show-special-indicators="false" show-rules="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-visibility-sign="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-data="true" show-description="false" show-field-description="false" auto-routed-paths="false" default-line-style="default" view-location="-153,-87" zoom="0.7">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -589,7 +599,7 @@
         <abstract-items />
         <layer id="e0066b69274d4c09ba13dd9a91a39508" name="Default" visible="true" enabled="true" locked="false" />
       </diagram>
-      <diagram type="uml-sequence" id="p0256ef76e96c43129d6cde8c8233c2fb_960400975" name="SequenceDiagram1" order-index="6" overview-order-index="4" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-field-tags="true" show-empty-compartments="true" show-special-indicators="false" show-rules="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-visibility-sign="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-data="true" show-description="false" show-field-description="false" auto-routed-paths="false" default-line-style="default">
+      <diagram type="uml-sequence" id="p0256ef76e96c43129d6cde8c8233c2fb_960400975" name="SequenceDiagram1" order-index="6" overview-order-index="4" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-field-tags="true" show-empty-compartments="true" show-special-indicators="false" show-rules="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-visibility-sign="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-data="true" show-description="false" show-field-description="false" auto-routed-paths="false" default-line-style="default" view-location="0,-14">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
