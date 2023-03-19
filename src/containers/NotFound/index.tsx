@@ -1,4 +1,4 @@
-import { H1 } from '../../GlobalStyles';
+import { H1 } from '@/GlobalStyles';
 import {
   NotFoundContainer,
   NotFoundWrapper,

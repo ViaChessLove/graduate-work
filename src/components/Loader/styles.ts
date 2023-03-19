@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
-import { COLORS } from '../../constants';
-import { DotProps } from '../../types';
+import { COLORS } from '@/constants';
+import { DotProps } from '@/types';
 
 export const Animation = keyframes`
   0%, 100% {

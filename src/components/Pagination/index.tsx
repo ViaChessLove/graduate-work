@@ -1,11 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { PaginationProps } from '../../types';
+import { PaginationProps } from '@/types';
 import { PaginationItem, PaginationWrapper } from './styles';
 import {
   makeSelectCurrentPage,
   makeSelectTotalCount,
-} from '../../redux/CoinsSlice/index';
+} from '@/redux/CoinsSlice/index';
 
 const Pagination = (props: PaginationProps) => {
   const {

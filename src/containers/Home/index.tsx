@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 
 import {
@@ -14,24 +14,24 @@ import {
   resetCoin,
   setUuid,
   updateTimePeriod,
-} from '../../redux/CoinSlice';
+} from '@/redux/CoinSlice';
 
 import {
   CoinsListWrapper,
   CoinsListContainer,
-} from '../../components/CoinsList/CoinsListStyles';
-import { makeSelectIsLoading } from '../../redux/CoinsSlice';
-import Loader from '../../components/Loader';
-import { COLORS } from '../../constants';
-import { H1 } from '../../GlobalStyles';
+} from '@/components/CoinsList/CoinsListStyles';
+import { makeSelectIsLoading } from '@/redux/CoinsSlice';
+import Loader from '@/components/Loader';
+import { COLORS } from '@/constants';
+import { H1 } from '@/GlobalStyles';
 import { Link } from 'react-router-dom';
 import { ChartWrapper, CoinImageContent } from '../Coin/CoinStyles';
-import { makeSelectExchangeData } from '../../redux/ExchangeSlice';
-import Button from '../../components/Button';
-import { formatPrice } from '../../utils/helpers';
+import { makeSelectExchangeData } from '@/redux/ExchangeSlice';
+import Button from '@/components/Button';
+import { formatPrice } from '@/utils/helpers';
 import { Line } from 'react-chartjs-2';
-import { OPTIONS } from '../../constants';
-import Change from '../../components/Change';
+import { OPTIONS } from '@/constants';
+import Change from '@/components/Change';
 
 const HomeListWrapper = styled(CoinsListWrapper)`
   background-color: ${COLORS.white}; 

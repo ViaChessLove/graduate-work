@@ -10,15 +10,15 @@ import {
   makeSelectExchangeData,
   makeSelectIsLoading,
   resetExchanges,
-} from '../../redux/ExchangeSlice';
+} from '@/redux/ExchangeSlice';
 
-import Loader from '../../components/Loader';
+import Loader from '@/components/Loader';
 import {
   CoinsListContainer,
   CoinsListWrapper,
-} from '../../components/CoinsList/CoinsListStyles';
-import ExchangeItem from '../../components/ExchangeItem';
-import { formatPrice } from '../../utils/helpers';
+} from '@/components/CoinsList/CoinsListStyles';
+import ExchangeItem from '@/components/ExchangeItem';
+import { formatPrice } from '@/utils/helpers';
 
 const Exchange: FC = () => {
   const dispatch = useDispatch();

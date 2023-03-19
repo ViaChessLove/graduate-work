@@ -1,5 +1,5 @@
-import { CoinsListProps } from '../../types';
-import { formatPrice } from '../../utils/helpers';
+import { CoinsListProps } from '@/types';
+import { formatPrice } from '@/utils/helpers';
 
 import * as styles from './CoinStyles';
 import Change from '../Change';

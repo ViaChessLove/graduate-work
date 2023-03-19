@@ -27,17 +27,17 @@ import { toPng } from 'html-to-image';
 
 import { Line } from 'react-chartjs-2';
 
-import * as slice from '../../redux/CoinSlice';
-import { getUuidFromPathName } from '../../utils/helpers';
+import * as slice from '@/redux/CoinSlice';
+import { getUuidFromPathName } from '@/utils/helpers';
 import * as coinStyles from './CoinStyles';
-import { ContentWithCoinsOrExchangeContainer, H1 } from '../../GlobalStyles';
-import { OPTIONS } from '../../constants';
+import { ContentWithCoinsOrExchangeContainer, H1 } from '@/GlobalStyles';
+import { OPTIONS } from '@/constants';
 
 import { COIN_OPTIONS_TITLE } from './messages';
-import Select from '../../components/SelectC';
-import CoinInfo from '../../components/CoinInfo';
-import Loader from '../../components/Loader';
-import Button from '../../components/Button';
+import Select from '@/components/SelectC';
+import CoinInfo from '@/components/CoinInfo';
+import Loader from '@/components/Loader';
+import Button from '@/components/Button';
 
 ChartJS.register(
   CategoryScale,

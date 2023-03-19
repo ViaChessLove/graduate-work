@@ -4,14 +4,14 @@ import {
   useSelector,
 } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import CoinsList from '../../components/CoinsList';
+import CoinsList from '@/components/CoinsList';
 
 import {
   getCoins,
   makeSelectIsLoading,
   resetCoinsSlice,
-} from '../../redux/CoinsSlice';
-import Loader from '../../components/Loader';
+} from '@/redux/CoinsSlice';
+import Loader from '@/components/Loader';
 
 const Coins = () => {
   const location = useLocation();

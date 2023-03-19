@@ -8,9 +8,9 @@ import {
   COINS_API,
   COINS_REQUEST_OPTIONS,
   COLORS,
-} from '../../constants';
-import { formatCoinRequest } from '../../utils/helpers';
-import request from "../../utils/request";
+} from '@/constants';
+import { formatCoinRequest } from '@/utils/helpers';
+import request from "@/utils/request";
 import {
   makeSelectComparableCoinData,
   updateDataSets,
@@ -65,7 +65,8 @@ function* getCoinFromApi(): Generator {
 
       const coin = yield select(makeSelectCoinData);
       
-      const labels = coin?.sparkline.map((spark: string, sparkIndex: number) => `${sparkIndex}h`);
+      const labels = coin?.sparkline
+        .map((spark: string, sparkIndex: number) => `${sparkIndex}h`);
       
       yield put(updateData({
         labels,

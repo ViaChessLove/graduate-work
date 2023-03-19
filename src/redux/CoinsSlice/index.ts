@@ -1,5 +1,5 @@
 import { createDraftSafeSelector } from '@reduxjs/toolkit';
-import { CoinsStateType } from '../../types';
+import { CoinsStateType } from '@/types';
 import {
   createSlice,
   PayloadAction,

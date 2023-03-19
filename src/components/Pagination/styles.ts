@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { COLORS } from '../../constants';
-import { PaginationItemProps } from '../../types';
+import { COLORS } from '@/constants';
+import { PaginationItemProps } from '@/types';
 
 export const PaginationItem = styled.div`
   position: relative;

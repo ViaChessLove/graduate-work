@@ -3,8 +3,8 @@ import {
   PayloadAction,
   createDraftSafeSelector,
 } from '@reduxjs/toolkit';
-import { CoinStateType } from '../../types';
-import { COLORS } from '../../constants';
+import { CoinStateType } from '@/types';
+import { COLORS } from '@/constants';
 
 const initialState: CoinStateType = {
   coin: null,

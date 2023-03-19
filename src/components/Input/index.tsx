@@ -1,6 +1,6 @@
 import React from 'react';
 import { InputComponent } from './styles';
-import { InputProps } from '../../types';
+import { InputProps } from '@/types';
 
 const Input = ({
   onChange,

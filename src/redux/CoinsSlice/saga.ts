@@ -5,7 +5,7 @@ import {
   takeEvery,
   takeLatest,
 } from 'redux-saga/effects';
-import request from '../../utils/request';
+import request from '@/utils/request';
 import { makeSelectOrderDirection } from './index';
 import {
   makeSelectTotalCount,
@@ -20,7 +20,7 @@ import {
   getCoinsApi,
   COINS_REQUEST_OPTIONS,
   SEARCH_API,
-} from '../../constants';
+} from '@/constants';
 
 import {
   getCoins,

@@ -3,12 +3,13 @@ import styled from "styled-components";
 import {
   COLORS,
   SCREEN_RESOLUTIONS,
-} from "../../constants";
+} from '@/constants';
 
 export const CoinsListWrapper = styled.section`
 
   width: 100%;
-  height: max(100vh, 100%);
+  min-height: 100vh;
+  height: 100%;
   padding-bottom: 20px;
 
   background-color: ${COLORS.ruskinBlueColor};

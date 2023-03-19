@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {
   COLORS,
   SCREEN_RESOLUTIONS,
-} from '../../constants';
+} from '@/constants';
 
 export const CoinContainer = styled(Link)`
   position: relative;
