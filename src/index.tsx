@@ -11,7 +11,7 @@ import { BrowserRouter, HashRouter } from 'react-router-dom';
 ReactDOM
   .createRoot(document.getElementById('root') as HTMLElement)
   .render(
-    <BrowserRouter>
+    <BrowserRouter basename={window.location.pathname || ''}>
       <Provider store={store}>
         <App />
       </Provider>
