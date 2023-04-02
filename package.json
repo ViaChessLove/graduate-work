@@ -3,14 +3,14 @@
   "private": false,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://ViaChessLove.github.io/graduate-work/",
+  "homepage": "https://viachesslove.github.io/graduate-work/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint ./src",
     "lint:fix": "eslint --fix ./src",
-    "predeploy": "npm run build",
+    "predeploy": "",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
