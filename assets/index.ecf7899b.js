@@ -121,6 +121,10 @@ Error generating stack: `+a.message+`
     border-collapse: collapse;
     border-spacing: 0;
   }
+  
+  * {
+    background-color: #fff;
+  }
 `,p4=G.div`
   height: ${e=>e.height?e.height:"0px"};
 `,tn=G.h1`
