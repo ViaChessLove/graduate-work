@@ -71,6 +71,7 @@ const Coin: FC = () => {
   const [isFavorite, setFavorite] = useState(false);
 
   useEffect(() => {
+      dispatch(slice.resetCoin());
     dispatch(slice.setUuid(uuid));
 
     setFavorite(uuid === localStorage.getItem('favoriteCoin'));
@@ -80,7 +81,7 @@ const Coin: FC = () => {
     return () => {
       dispatch(slice.resetCoin());
     }
-  }, [dispatch, location]);
+  }, [dispatch, location, uuid]);
 
   const isNullData = data === null;
 

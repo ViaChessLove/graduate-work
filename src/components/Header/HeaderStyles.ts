@@ -34,6 +34,7 @@ export const HeaderContent = styled.nav`
 export const HeaderRoutes = styled.div`
   display: flex;
   justify-content: space-between;
+  gap: 10px;
 
   width: 150px;
 

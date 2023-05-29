@@ -8,6 +8,7 @@ export const CoinInfoContainer = styled.div`
 
 export const CoinItem = styled.div`
   margin-top: 10px;
+  width: 100%;
 
  &:not(:last-child) {
     margin-bottom: 10px;
