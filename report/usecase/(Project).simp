@@ -55,7 +55,7 @@
     <entity-ids>
       <counter>
         <item-type type-id="group" type="Group" />
-        <value>1485</value>
+        <value>1612</value>
       </counter>
       <counter>
         <item-type type-id="actor" type="Actor" />
@@ -214,6 +214,16 @@
         <phone-number />
         <description />
         <color>#00000000</color>
+        <working-schedule uid="ws-25d94fafbaa54c9d9c7ecd5a11f9be16" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
+      </person>
+      <person id="">
+        <first-name />
+        <last-name>vyacheslav</last-name>
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
       </person>
     </persons>
     <teams />
@@ -252,7 +262,7 @@
       </meta>
       <abstract-items />
       <sub-models />
-      <diagram type="uml-usecase" id="p9eca6fd3c8044eca9e3ec7f2c1e388ec_153567620" name="UseCaseDiagram1" order-index="1" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-field-tags="true" show-empty-compartments="true" show-special-indicators="false" show-rules="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-visibility-sign="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-data="true" show-description="false" show-field-description="false" auto-routed-paths="false" default-line-style="default" view-location="-75,-117" zoom="0.6">
+      <diagram type="uml-usecase" id="p9eca6fd3c8044eca9e3ec7f2c1e388ec_153567620" name="UseCaseDiagram1" order-index="1" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-field-tags="true" show-empty-compartments="true" show-special-indicators="false" show-rules="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-visibility-sign="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-data="true" show-description="false" show-field-description="false" auto-routed-paths="false" default-line-style="default" view-location="-115,-185" zoom="0.7">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -281,17 +291,17 @@
               <owned-item ref="a710bf68651541a496c5b7cd9f6ae4c2" />
             </owned-items>
           </item>
-          <item id="691788eac5234d7380b7f37bc4797f2b" cid="UC001" type="use-case" name="Открыть страницу крипто-валют" style-class="" owner="dda4b28cee0a4fa485897b4cf552b868" change-tracking-state="added" creator="" creation-date="02/13/2023 20:47:35" visibility="undefined">
+          <item id="691788eac5234d7380b7f37bc4797f2b" cid="UC001" type="use-case" name="Открыть страницу криптовалют" style-class="" owner="dda4b28cee0a4fa485897b4cf552b868" change-tracking-state="added" creator="" creation-date="02/13/2023 20:47:35" visibility="undefined">
             <use-case>
               <stakeholders />
             </use-case>
           </item>
-          <item id="di0275ec107a354987a340516d75dc00252008" cid="UC002" type="use-case" name="Открыть страницу крипто-бирж" style-class="" owner="dda4b28cee0a4fa485897b4cf552b868" change-tracking-state="added" creator="" creation-date="02/13/2023 20:47:35" visibility="undefined">
+          <item id="di0275ec107a354987a340516d75dc00252008" cid="UC002" type="use-case" name="Открыть страницу криптобирж" style-class="" owner="dda4b28cee0a4fa485897b4cf552b868" change-tracking-state="added" creator="" creation-date="02/13/2023 20:47:35" visibility="undefined">
             <use-case>
               <stakeholders />
             </use-case>
           </item>
-          <item id="e6d428a2f83942e393fae450ad21ce9b" cid="UC003" type="use-case" name="Отсортировать крипто-валюты" style-class="" owner="dda4b28cee0a4fa485897b4cf552b868" change-tracking-state="added" creator="" creation-date="02/13/2023 20:48:36" visibility="undefined">
+          <item id="e6d428a2f83942e393fae450ad21ce9b" cid="UC003" type="use-case" name="Отсортировать криптовалюты" style-class="" owner="dda4b28cee0a4fa485897b4cf552b868" change-tracking-state="added" creator="" creation-date="02/13/2023 20:48:36" visibility="undefined">
             <use-case>
               <stakeholders />
             </use-case>
@@ -308,32 +318,32 @@
           </item>
           <item id="adc949dde6a94149a52a3246b2a8d041" cid="REL001" type="relationship" name="" style-class="" change-tracking-state="added" creator="" creation-date="02/13/2023 20:59:30" from="b75be8f549ff4e48a700ddff2928f695" to="691788eac5234d7380b7f37bc4797f2b" visibility="package">
             <relation from="b75be8f549ff4e48a700ddff2928f695" to="691788eac5234d7380b7f37bc4797f2b" derived="false">
-              <start-role id="umlar-3ec5d75f-4cee-4101-810e-9b75e340f1a7" name="" navigability="" association-type="association" visibility="private" />
-              <end-role id="umlar-e4517ddf-8a53-41bc-b95e-16354185fe4e" name="" navigability="" association-type="association" visibility="private" />
+              <start-role id="umlar-5d75c503-9322-4b11-85b5-3fa430e1f084" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-2bebe806-5542-4b27-befc-702fb9820e0a" name="" navigability="" association-type="association" visibility="private" />
             </relation>
           </item>
           <item id="f9f65af6c301436e98bcb02243ea26cb" cid="REL002" type="relationship" name="" style-class="" change-tracking-state="added" creator="" creation-date="02/13/2023 20:59:46" from="b75be8f549ff4e48a700ddff2928f695" to="di0275ec107a354987a340516d75dc00252008" visibility="package">
             <relation from="b75be8f549ff4e48a700ddff2928f695" to="di0275ec107a354987a340516d75dc00252008" derived="false">
-              <start-role id="umlar-779f7157-3ae8-4b0f-a93a-9fa6d53537c9" name="" navigability="" association-type="association" visibility="private" />
-              <end-role id="umlar-7d81b945-5fdf-4bff-81c9-faab0da53951" name="" navigability="" association-type="association" visibility="private" />
+              <start-role id="umlar-22ba9206-cffb-4aaf-bfd0-fe6ccdf62a1a" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-0a2884f1-e702-4b52-aa9b-ded8f878444b" name="" navigability="" association-type="association" visibility="private" />
             </relation>
           </item>
           <item id="330e5cfcfb7c48e4b6717b994f79bcd0" cid="REL003" type="relationship" name="" style-class="" change-tracking-state="added" creator="" creation-date="02/13/2023 20:59:54" from="e6d428a2f83942e393fae450ad21ce9b" to="b75be8f549ff4e48a700ddff2928f695" visibility="package">
             <relation from="e6d428a2f83942e393fae450ad21ce9b" to="b75be8f549ff4e48a700ddff2928f695" derived="false">
-              <start-role id="umlar-1c27a04d-5853-442b-8c64-36c780417d4b" name="" navigability="" association-type="association" visibility="private" />
-              <end-role id="umlar-649bf40b-8281-41dd-828c-786d6a8e107f" name="" navigability="" association-type="association" visibility="private" />
+              <start-role id="umlar-6d8a84a9-8e32-4d4e-9733-2a7fbe3cb7ad" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-f75d3ed9-8aea-492f-b746-2ed4d4017fc5" name="" navigability="" association-type="association" visibility="private" />
             </relation>
           </item>
           <item id="426b79d6e12e41c7b52164d90aae3ad7" cid="REL004" type="relationship" name="" style-class="" change-tracking-state="added" creator="" creation-date="02/13/2023 21:00:00" from="21c84de0f10a4776bd6887e8b950032e" to="b75be8f549ff4e48a700ddff2928f695" visibility="package">
             <relation from="21c84de0f10a4776bd6887e8b950032e" to="b75be8f549ff4e48a700ddff2928f695" derived="false">
-              <start-role id="umlar-5a4b5295-151c-406c-af39-fbb2f6d505ad" name="" navigability="" association-type="association" visibility="private" />
-              <end-role id="umlar-023893a9-e6b5-4a3e-8a8c-984c8d06d464" name="" navigability="" association-type="association" visibility="private" />
+              <start-role id="umlar-b282a172-ab84-4f2f-a60d-ebd09e704ef3" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-9aecce93-2c25-408c-bbda-b4715ad2bbc4" name="" navigability="" association-type="association" visibility="private" />
             </relation>
           </item>
           <item id="6ca1a97e0b1b49b7bfa1a59ef12f3db5" cid="REL006" type="relationship" name="" style-class="" change-tracking-state="added" creator="" creation-date="02/13/2023 21:00:41" from="di21e73df006b842c4ad96662d2ced7c184867" to="b75be8f549ff4e48a700ddff2928f695" visibility="package">
             <relation from="di21e73df006b842c4ad96662d2ced7c184867" to="b75be8f549ff4e48a700ddff2928f695" derived="false">
-              <start-role id="umlar-7560298b-68fb-4e7b-af6a-64eb613332eb" name="" navigability="" association-type="association" visibility="private" />
-              <end-role id="umlar-719d29ac-4525-4f87-bd0e-3bae79939342" name="" navigability="" association-type="association" visibility="private" />
+              <start-role id="umlar-7dc364a3-2b95-4010-840c-add53ea3e151" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-17339b47-d783-4509-89bd-fca7d9082ab6" name="" navigability="" association-type="association" visibility="private" />
             </relation>
           </item>
           <item id="70729ea557c74734af53c759a1e55870" cid="INC002" type="include" name="" style-class="" change-tracking-state="added" creator="" creation-date="02/18/2023 19:06:00" from="2b6a3a1fc17246a58f649df4f3301f89" to="691788eac5234d7380b7f37bc4797f2b" visibility="package">
@@ -344,20 +354,20 @@
               <stereotype id="70729ea557c74734af53c759a1e55870_include_c" type="include" ref="" />
             </stereotype-instances>
           </item>
-          <item id="2b6a3a1fc17246a58f649df4f3301f89" cid="UC006" type="use-case" name="Узнать детали крипто-валюты" style-class="" owner="dda4b28cee0a4fa485897b4cf552b868" change-tracking-state="added" creator="" creation-date="02/18/2023 19:06:06" visibility="undefined">
+          <item id="2b6a3a1fc17246a58f649df4f3301f89" cid="UC006" type="use-case" name="Узнать детали криптовалюты" style-class="" owner="dda4b28cee0a4fa485897b4cf552b868" change-tracking-state="added" creator="" creation-date="02/18/2023 19:06:06" visibility="undefined">
             <use-case>
               <stakeholders />
             </use-case>
           </item>
-          <item id="a710bf68651541a496c5b7cd9f6ae4c2" cid="UC007" type="use-case" name="Добавить крипто-валюту в любимые" style-class="" owner="dda4b28cee0a4fa485897b4cf552b868" change-tracking-state="added" creator="" creation-date="02/25/2023 18:30:23" visibility="undefined">
+          <item id="a710bf68651541a496c5b7cd9f6ae4c2" cid="UC007" type="use-case" name="Добавить криптовалюту в любимые" style-class="" owner="dda4b28cee0a4fa485897b4cf552b868" change-tracking-state="added" creator="" creation-date="02/25/2023 18:30:23" visibility="undefined">
             <use-case>
               <stakeholders />
             </use-case>
           </item>
           <item id="c673baef6bd34bc6959aa79aa93ffad9" cid="REL007" type="relationship" name="" style-class="" change-tracking-state="added" creator="" creation-date="02/25/2023 18:31:00" from="a710bf68651541a496c5b7cd9f6ae4c2" to="b75be8f549ff4e48a700ddff2928f695" visibility="package">
             <relation from="a710bf68651541a496c5b7cd9f6ae4c2" to="b75be8f549ff4e48a700ddff2928f695" derived="false">
-              <start-role id="umlar-edf44313-64e8-45bc-ae61-79fc723ea117" name="" navigability="" association-type="association" visibility="private" />
-              <end-role id="umlar-b123d997-85a5-47e2-83e6-8bfbae5d3df2" name="" navigability="" association-type="association" visibility="private" />
+              <start-role id="umlar-452b5481-8d8b-4374-91a8-ab54f0918292" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-a34f2422-29b7-4346-b4be-ffcb64e30a12" name="" navigability="" association-type="association" visibility="private" />
             </relation>
           </item>
         </abstract-items>
@@ -487,7 +497,7 @@
           </item>
         </layer>
       </diagram>
-      <diagram type="data-flow" id="pf52db1d27f9b4c01b7105d3924e52f24_671801067" name="DataFlowDiagram1" order-index="3" overview-order-index="1" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-field-tags="true" show-empty-compartments="true" show-special-indicators="false" show-rules="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-visibility-sign="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-data="true" show-description="false" show-field-description="false" auto-routed-paths="false" default-line-style="default" view-location="114,-163" zoom="0.8">
+      <diagram type="data-flow" id="pf52db1d27f9b4c01b7105d3924e52f24_671801067" name="DataFlowDiagram1" order-index="3" overview-order-index="1" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-field-tags="true" show-empty-compartments="true" show-special-indicators="false" show-rules="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-visibility-sign="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-data="true" show-description="false" show-field-description="false" auto-routed-paths="false" default-line-style="default" view-location="92,-163" zoom="0.8">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -505,7 +515,7 @@
         </meta>
         <abstract-items>
           <item id="2f127a1c93c54c35a47da2deb8a38916" cid="DFE003" type="dfd-external" name="Интерфейс пользователя (клиент)" style-class="" change-tracking-state="added" creator="" creation-date="04/19/2023 20:13:12">
-            <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFFFF" accuracy="0.9">
+            <style style-name="Custom Style" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFFFF" accuracy="0.9">
               <text-style type="name" use-defaults="false" color="#FF555555" font="Segoe UI;14;B" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
               <text-style type="part-header" use-defaults="false" color="#FF1E1E1E" font="Verdana;9;I" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
               <text-style type="text" use-defaults="false" color="#FF555555" font="Segoe UI;14;" horizontal-alignment="left" vertical-alignment="center" shadow="false" />
@@ -529,7 +539,7 @@
             </style>
           </item>
           <item id="2297a05f21da49879c0842fdfcc7168e" cid="DFP001" type="dfd-process" name="Запрос к внешнему веб сервису" style-class="" change-tracking-state="added" creator="" creation-date="02/18/2023 19:13:50">
-            <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFFFF" accuracy="0.9">
+            <style style-name="Custom Style" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFFFF" accuracy="0.9">
               <text-style type="name" use-defaults="false" color="#FF555555" font="Segoe UI;14;B" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
               <text-style type="part-header" use-defaults="false" color="#FF1E1E1E" font="Verdana;9;I" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
               <text-style type="text" use-defaults="false" color="#FF555555" font="Segoe UI;14;" horizontal-alignment="left" vertical-alignment="center" shadow="false" />
@@ -552,8 +562,8 @@
               </alternate-styles>
             </style>
           </item>
-          <item id="bec2fb83256848f0ab1e53a18fa3c4c2" cid="DFF001" type="dfd-data-flow" name="uuid крипто-валюты" style-class="" change-tracking-state="added" creator="" creation-date="02/18/2023 19:14:12" to="2297a05f21da49879c0842fdfcc7168e">
-            <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFFFF" accuracy="0.9">
+          <item id="bec2fb83256848f0ab1e53a18fa3c4c2" cid="DFF001" type="dfd-data-flow" name="uuid криптовалюты" style-class="" change-tracking-state="added" creator="" creation-date="02/18/2023 19:14:12" to="2297a05f21da49879c0842fdfcc7168e">
+            <style style-name="Custom Style" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFFFF" accuracy="0.9">
               <text-style type="name" use-defaults="false" color="#FF555555" font="Segoe UI;14;B" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
               <text-style type="part-header" use-defaults="false" color="#FF1E1E1E" font="Verdana;9;I" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
               <text-style type="text" use-defaults="false" color="#FF555555" font="Segoe UI;14;" horizontal-alignment="left" vertical-alignment="center" shadow="false" />
@@ -577,7 +587,7 @@
             </style>
           </item>
           <item id="8a8021b865de498bb0302d8d6fddae61" cid="DFS003" type="dfd-data-store" name="Flux Хранилище" style-class="" change-tracking-state="added" creator="" creation-date="02/18/2023 19:18:27">
-            <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFFFF" accuracy="0.9">
+            <style style-name="Custom Style" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFFFF" accuracy="0.9">
               <text-style type="name" use-defaults="false" color="#FF555555" font="Segoe UI;14;B" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
               <text-style type="part-header" use-defaults="false" color="#FF1E1E1E" font="Verdana;9;I" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
               <text-style type="text" use-defaults="false" color="#FF555555" font="Segoe UI;14;" horizontal-alignment="left" vertical-alignment="center" shadow="false" />
@@ -601,7 +611,7 @@
             </style>
           </item>
           <item id="2be4ad9a77bc4de6906e590fcae20879" cid="DFE001" type="dfd-external" name="Внешний веб сервис" style-class="" change-tracking-state="added" creator="" creation-date="02/18/2023 19:19:49">
-            <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFFFF" accuracy="0.9">
+            <style style-name="Custom Style" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFFFF" accuracy="0.9">
               <text-style type="name" use-defaults="false" color="#FF555555" font="Segoe UI;14;B" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
               <text-style type="part-header" use-defaults="false" color="#FF1E1E1E" font="Verdana;9;I" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
               <text-style type="text" use-defaults="false" color="#FF555555" font="Segoe UI;14;" horizontal-alignment="left" vertical-alignment="center" shadow="false" />
@@ -624,8 +634,8 @@
               </alternate-styles>
             </style>
           </item>
-          <item id="15267b0c16df42e6a5d2de9f2fe062dd" cid="DFF003" type="dfd-data-flow" name="uuid крипто-валюты" style-class="" change-tracking-state="added" creator="" creation-date="02/18/2023 19:20:01" from="2297a05f21da49879c0842fdfcc7168e" to="2be4ad9a77bc4de6906e590fcae20879">
-            <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFFFF" accuracy="0.9">
+          <item id="15267b0c16df42e6a5d2de9f2fe062dd" cid="DFF003" type="dfd-data-flow" name="uuid криптовалюты" style-class="" change-tracking-state="added" creator="" creation-date="02/18/2023 19:20:01" from="2297a05f21da49879c0842fdfcc7168e" to="2be4ad9a77bc4de6906e590fcae20879">
+            <style style-name="Custom Style" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFFFF" accuracy="0.9">
               <text-style type="name" use-defaults="false" color="#FF555555" font="Segoe UI;14;B" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
               <text-style type="part-header" use-defaults="false" color="#FF1E1E1E" font="Verdana;9;I" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
               <text-style type="text" use-defaults="false" color="#FF555555" font="Segoe UI;14;" horizontal-alignment="left" vertical-alignment="center" shadow="false" />
@@ -649,7 +659,7 @@
             </style>
           </item>
           <item id="bc5a5f846f46487d9cceaaaa298a9d66" cid="DFP004" type="dfd-process" name="Передача ответа с сервиса" style-class="" change-tracking-state="added" creator="" creation-date="02/18/2023 19:31:51">
-            <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFFFF" accuracy="0.9">
+            <style style-name="Custom Style" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFFFF" accuracy="0.9">
               <text-style type="name" use-defaults="false" color="#FF555555" font="Segoe UI;14;B" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
               <text-style type="part-header" use-defaults="false" color="#FF1E1E1E" font="Verdana;9;I" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
               <text-style type="text" use-defaults="false" color="#FF555555" font="Segoe UI;14;" horizontal-alignment="left" vertical-alignment="center" shadow="false" />
@@ -672,8 +682,8 @@
               </alternate-styles>
             </style>
           </item>
-          <item id="912e695fc981495d8ded4f7c235c9e60" cid="DFF010" type="dfd-data-flow" name="данные крипто-валюты" style-class="" change-tracking-state="added" creator="" creation-date="02/18/2023 19:32:36" from="2be4ad9a77bc4de6906e590fcae20879" to="bc5a5f846f46487d9cceaaaa298a9d66">
-            <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFFFF" accuracy="0.9">
+          <item id="912e695fc981495d8ded4f7c235c9e60" cid="DFF010" type="dfd-data-flow" name="данные криптовалюты" style-class="" change-tracking-state="added" creator="" creation-date="02/18/2023 19:32:36" from="2be4ad9a77bc4de6906e590fcae20879" to="bc5a5f846f46487d9cceaaaa298a9d66">
+            <style style-name="Custom Style" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFFFF" accuracy="0.9">
               <text-style type="name" use-defaults="false" color="#FF555555" font="Segoe UI;14;B" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
               <text-style type="part-header" use-defaults="false" color="#FF1E1E1E" font="Verdana;9;I" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
               <text-style type="text" use-defaults="false" color="#FF555555" font="Segoe UI;14;" horizontal-alignment="left" vertical-alignment="center" shadow="false" />
@@ -696,8 +706,8 @@
               </alternate-styles>
             </style>
           </item>
-          <item id="a816060236ca480e9713cfbc7ac0da05" cid="DFF011" type="dfd-data-flow" name="данные крипто-валюты" style-class="" change-tracking-state="added" creator="" creation-date="02/18/2023 19:32:49" from="bc5a5f846f46487d9cceaaaa298a9d66" to="8a8021b865de498bb0302d8d6fddae61">
-            <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFFFF" accuracy="0.9">
+          <item id="a816060236ca480e9713cfbc7ac0da05" cid="DFF011" type="dfd-data-flow" name="данные криптовалюты" style-class="" change-tracking-state="added" creator="" creation-date="02/18/2023 19:32:49" from="bc5a5f846f46487d9cceaaaa298a9d66" to="8a8021b865de498bb0302d8d6fddae61">
+            <style style-name="Custom Style" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFFFF" accuracy="0.9">
               <text-style type="name" use-defaults="false" color="#FF555555" font="Segoe UI;14;B" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
               <text-style type="part-header" use-defaults="false" color="#FF1E1E1E" font="Verdana;9;I" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
               <text-style type="text" use-defaults="false" color="#FF555555" font="Segoe UI;14;" horizontal-alignment="left" vertical-alignment="center" shadow="false" />
@@ -720,8 +730,8 @@
               </alternate-styles>
             </style>
           </item>
-          <item id="b9e4e2ea18714bd6a19c630b0ed757e6" cid="DFF012" type="dfd-data-flow" name="данные крипто-валюты" style-class="" change-tracking-state="added" creator="" creation-date="02/18/2023 19:33:08" from="8a8021b865de498bb0302d8d6fddae61" to="e4086dc47e794258b33e85ff1cc9a2bf">
-            <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFFFF" accuracy="0.9">
+          <item id="b9e4e2ea18714bd6a19c630b0ed757e6" cid="DFF012" type="dfd-data-flow" name="данные криптовалюты" style-class="" change-tracking-state="added" creator="" creation-date="02/18/2023 19:33:08" from="8a8021b865de498bb0302d8d6fddae61" to="e4086dc47e794258b33e85ff1cc9a2bf">
+            <style style-name="Custom Style" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFFFF" accuracy="0.9">
               <text-style type="name" use-defaults="false" color="#FF555555" font="Segoe UI;14;B" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
               <text-style type="part-header" use-defaults="false" color="#FF1E1E1E" font="Verdana;9;I" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
               <text-style type="text" use-defaults="false" color="#FF555555" font="Segoe UI;14;" horizontal-alignment="left" vertical-alignment="center" shadow="false" />
@@ -745,7 +755,7 @@
             </style>
           </item>
           <item id="e4086dc47e794258b33e85ff1cc9a2bf" cid="DFP005" type="dfd-process" name="Передача данных на клиент" style-class="" change-tracking-state="added" creator="" creation-date="04/19/2023 20:10:39">
-            <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFFFF" accuracy="0.9">
+            <style style-name="Custom Style" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFFFF" accuracy="0.9">
               <text-style type="name" use-defaults="false" color="#FF555555" font="Segoe UI;14;B" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
               <text-style type="part-header" use-defaults="false" color="#FF1E1E1E" font="Verdana;9;I" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
               <text-style type="text" use-defaults="false" color="#FF555555" font="Segoe UI;14;" horizontal-alignment="left" vertical-alignment="center" shadow="false" />
@@ -769,7 +779,7 @@
             </style>
           </item>
           <item id="9f505707e2a443398d14d734a8a1c019" cid="DFF014" type="dfd-data-flow" name="данные крипто-валюты" style-class="" change-tracking-state="added" creator="" creation-date="04/19/2023 20:11:35" from="e4086dc47e794258b33e85ff1cc9a2bf" to="2f127a1c93c54c35a47da2deb8a38916">
-            <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFFFF" accuracy="0.9">
+            <style style-name="Custom Style" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFFFF" accuracy="0.9">
               <text-style type="name" use-defaults="false" color="#FF555555" font="Segoe UI;14;B" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
               <text-style type="part-header" use-defaults="false" color="#FF1E1E1E" font="Verdana;9;I" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
               <text-style type="text" use-defaults="false" color="#FF555555" font="Segoe UI;14;" horizontal-alignment="left" vertical-alignment="center" shadow="false" />
@@ -792,8 +802,8 @@
               </alternate-styles>
             </style>
           </item>
-          <item id="dif6bbed253f844cefbeccf1a866c9c4708246" cid="DFF015" type="dfd-data-flow" name="данные крипто-валюты" style-class="" change-tracking-state="added" creator="" creation-date="02/18/2023 19:33:08" to="e4086dc47e794258b33e85ff1cc9a2bf">
-            <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFFFF" accuracy="0.9">
+          <item id="dif6bbed253f844cefbeccf1a866c9c4708246" cid="DFF015" type="dfd-data-flow" name="данные криптовалюты" style-class="" change-tracking-state="added" creator="" creation-date="02/18/2023 19:33:08" to="e4086dc47e794258b33e85ff1cc9a2bf">
+            <style style-name="Custom Style" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFFFF" accuracy="0.9">
               <text-style type="name" use-defaults="false" color="#FF555555" font="Segoe UI;14;B" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
               <text-style type="part-header" use-defaults="false" color="#FF1E1E1E" font="Verdana;9;I" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
               <text-style type="text" use-defaults="false" color="#FF555555" font="Segoe UI;14;" horizontal-alignment="left" vertical-alignment="center" shadow="false" />
@@ -819,13 +829,13 @@
         </abstract-items>
         <layer id="e76a5a477f644bb9b8633ef8b72dd691" name="Default" visible="true" enabled="true" locked="false">
           <item id="2297a05f21da49879c0842fdfcc7168e" iid="48d4c718ea66498891793e1db294ee78" creation-date="02/18/2023 19:13:50" order-index="1" type="entity">
-            <layout ax="789.5" ay="-105.625" awidth="192" aheight="130" x="789.5" y="-105.625" width="162" height="100" rotation-center="0,12" />
+            <layout ax="805.5" ay="-105.625" awidth="154" aheight="130" x="805.5" y="-105.625" width="154" height="130" rotation-center="19,12" />
           </item>
           <item id="bec2fb83256848f0ab1e53a18fa3c4c2" iid="cff3cb409b1f4f6b8a4794ef50ccaee2" creation-date="02/18/2023 19:14:12" order-index="2" type="relation">
-            <layout line-style="oblique" start-auto-side="false" end-auto-side="false" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="643" y1="-41" x2="789" y2="-40" start-border-pos="0.374071784317493" end-border-pos="0.87421875" start-local-pos="50.125" end-local-pos="60.375" name-position="-2,39">
+            <layout line-style="oblique" start-auto-side="false" end-auto-side="false" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="643" y1="-41" x2="805" y2="-40" start-border-pos="0.374071784317493" end-border-pos="0.87421875" start-local-pos="50.125" end-local-pos="60.375" name-position="2,44" name-width="163">
               <points>
                 <point x="643" y="-41" />
-                <point x="789" y="-40" />
+                <point x="805" y="-40" />
               </points>
             </layout>
             <relation to="2297a05f21da49879c0842fdfcc7168e" to-iid="48d4c718ea66498891793e1db294ee78" />
@@ -837,16 +847,16 @@
             <layout ax="1112" ay="-87.8125" awidth="175" aheight="94" x="1117" y="-82.8125" width="145" height="64" rotation-center="0,3" />
           </item>
           <item id="15267b0c16df42e6a5d2de9f2fe062dd" iid="b6c7b3bde99d4a0bb7b1577dbc2fe330" creation-date="02/18/2023 19:20:01" order-index="6" type="relation">
-            <layout line-style="oblique" start-auto-side="false" end-auto-side="false" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="981" y1="-41" x2="1112" y2="-41" start-border-pos="0.374218747019768" end-border-pos="0.876116067171097" start-local-pos="59.625" end-local-pos="41.625" name-position="-4,44.875">
+            <layout line-style="oblique" start-auto-side="false" end-auto-side="false" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="959" y1="-41" x2="1112" y2="-41" start-border-pos="0.374218747019768" end-border-pos="0.876116067171097" start-local-pos="59.625" end-local-pos="41.625" name-position="-4,44.875">
               <points>
-                <point x="981" y="-41" />
+                <point x="959" y="-41" />
                 <point x="1112" y="-41" />
               </points>
             </layout>
             <relation from="2297a05f21da49879c0842fdfcc7168e" from-iid="48d4c718ea66498891793e1db294ee78" to="2be4ad9a77bc4de6906e590fcae20879" to-iid="85a2ce40898241d1b26c6ea869a50d60" />
           </item>
           <item id="bc5a5f846f46487d9cceaaaa298a9d66" iid="a0f3f7bd1edb4cdd8f50c7280a3d063f" creation-date="02/18/2023 19:31:51" order-index="14" type="entity">
-            <layout ax="1103.5" ay="308.1875" awidth="192" aheight="144" x="1108.5" y="313.1875" width="182" height="114" rotation-center="-8.5,-8.125" />
+            <layout ax="1122.5" ay="308.375" awidth="154" aheight="144" x="1122.5" y="308.375" width="154" height="144" rotation-center="10.5,-8.125" />
           </item>
           <item id="912e695fc981495d8ded4f7c235c9e60" iid="4d61bdf8781d4fc39f554e72bc17fd8c" creation-date="02/18/2023 19:32:36" order-index="15" type="relation">
             <layout line-style="oblique" start-auto-side="false" end-auto-side="false" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="1200" y1="6" x2="1199" y2="308" start-border-pos="0.624242424964905" end-border-pos="0.124313186813187" start-local-pos="83" end-local-pos="90.5" name-position="-119,42">
@@ -858,16 +868,16 @@
             <relation from="2be4ad9a77bc4de6906e590fcae20879" from-iid="85a2ce40898241d1b26c6ea869a50d60" to="bc5a5f846f46487d9cceaaaa298a9d66" to-iid="a0f3f7bd1edb4cdd8f50c7280a3d063f" />
           </item>
           <item id="a816060236ca480e9713cfbc7ac0da05" iid="f9f3ff25b6e94f4ea66df3a058d7b0e0" creation-date="02/18/2023 19:32:49" order-index="16" type="relation">
-            <layout line-style="oblique" start-auto-side="false" end-auto-side="false" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="1103" y1="380" x2="578" y2="381" start-border-pos="0.875699626865672" end-border-pos="0.375309407711029" start-local-pos="66.625" end-local-pos="50.625" name-position="-9,34">
+            <layout line-style="oblique" start-auto-side="false" end-auto-side="false" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="1122" y1="380" x2="578" y2="381" start-border-pos="0.875699626865672" end-border-pos="0.375309407711029" start-local-pos="66.625" end-local-pos="50.625" name-position="-9,34">
               <points>
-                <point x="1103" y="380" />
+                <point x="1122" y="380" />
                 <point x="578" y="381" />
               </points>
             </layout>
             <relation from="bc5a5f846f46487d9cceaaaa298a9d66" from-iid="a0f3f7bd1edb4cdd8f50c7280a3d063f" to="8a8021b865de498bb0302d8d6fddae61" to-iid="f7926252f6b84edab91a224f55d64d86" />
           </item>
           <item id="b9e4e2ea18714bd6a19c630b0ed757e6" iid="834111d8cef64766a1bfb23966ba5ec7" creation-date="02/18/2023 19:33:08" order-index="17" type="relation">
-            <layout line-style="oblique" start-auto-side="false" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="490" y1="325" x2="490" y2="230" start-border-pos="0.124242424242424" end-border-pos="0.625504031777382" start-local-pos="82" end-local-pos="123.5" name-position="-76,-8" name-width="140">
+            <layout line-style="oblique" start-auto-side="false" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="490" y1="325" x2="490" y2="230" start-border-pos="0.124242424242424" end-border-pos="0.625504031777382" start-local-pos="82" end-local-pos="123.5" name-position="-92,-4" name-width="170">
               <points>
                 <point x="490" y="325" />
                 <point x="490" y="230" />
@@ -876,22 +886,22 @@
             <relation from="8a8021b865de498bb0302d8d6fddae61" from-iid="f7926252f6b84edab91a224f55d64d86" to="e4086dc47e794258b33e85ff1cc9a2bf" to-iid="cdfacc3cb7e342f5ba696b71d5538230" />
           </item>
           <item id="e4086dc47e794258b33e85ff1cc9a2bf" iid="cdfacc3cb7e342f5ba696b71d5538230" creation-date="04/19/2023 20:10:39" order-index="18" type="entity">
-            <layout ax="361.5" ay="101" awidth="258" aheight="130" x="361.5" y="101" width="248" height="120" rotation-center="0,4.5" />
+            <layout ax="403" ay="87" awidth="175" aheight="144" x="403" y="87" width="175" height="144" rotation-center="0,11.5" />
           </item>
           <item id="2f127a1c93c54c35a47da2deb8a38916" iid="fd33018e2e6c4ecdafad564f3536bf89" creation-date="04/19/2023 20:13:12" order-index="20" type="entity">
             <layout ax="361.5" ay="-87.8125" awidth="282" aheight="94.375" x="361.5" y="-87.8125" width="282" height="94.375" />
           </item>
           <item id="9f505707e2a443398d14d734a8a1c019" iid="9979849d88904e749d0d269935b6f008" creation-date="04/19/2023 20:11:35" order-index="19" type="relation">
-            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="490" y1="101" x2="490" y2="7" start-border-pos="0.124495967741935" end-border-pos="0.63608156144619" start-local-pos="123.5" end-local-pos="128.5" name-position="-141,591.1875">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="490" y1="87" x2="490" y2="7" start-border-pos="0.124495967741935" end-border-pos="0.63608156144619" start-local-pos="123.5" end-local-pos="128.5" name-position="-141,591.1875">
               <points>
-                <point x="490" y="101" />
+                <point x="490" y="87" />
                 <point x="490" y="7" />
               </points>
             </layout>
             <relation from="e4086dc47e794258b33e85ff1cc9a2bf" from-iid="cdfacc3cb7e342f5ba696b71d5538230" to="2f127a1c93c54c35a47da2deb8a38916" to-iid="fd33018e2e6c4ecdafad564f3536bf89" />
           </item>
           <item id="dif6bbed253f844cefbeccf1a866c9c4708246" iid="98cd468489d74cc6a96fb4223c41c491" creation-date="02/18/2023 19:33:08" order-index="17" type="relation">
-            <layout line-style="oblique" start-auto-side="false" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="490" y1="325" x2="490" y2="230" start-border-pos="0.124242424242424" end-border-pos="0.625484496355057" start-local-pos="82" end-local-pos="128.5" name-position="-71,-221" name-width="140">
+            <layout line-style="oblique" start-auto-side="false" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="490" y1="325" x2="490" y2="230" start-border-pos="0.124242424242424" end-border-pos="0.625484496355057" start-local-pos="82" end-local-pos="128.5" name-position="-96,-217" name-width="170">
               <points>
                 <point x="490" y="325" />
                 <point x="490" y="230" />
@@ -1031,8 +1041,8 @@
           </item>
           <item id="749388c60c3b479b9bf3b02cd4b81990" cid="REL008" type="relationship" name="" style-class="" change-tracking-state="added" creator="" creation-date="03/15/2023 16:48:55" from="7081df10d9c6450f9660234827b45063" to="a40b62b78da64bb7af909b9ca8226697" visibility="package">
             <relation from="7081df10d9c6450f9660234827b45063" to="a40b62b78da64bb7af909b9ca8226697" derived="false">
-              <start-role id="umlar-33a48f43-406a-4a63-8d81-9be506ba1058" name="" navigability="" association-type="association" visibility="private" />
-              <end-role id="umlar-c1c0f086-fca4-47b7-9929-9823d8d9e2fa" name="" navigability="" association-type="association" visibility="private" />
+              <start-role id="umlar-8df9c93c-e9d7-4fb0-af29-d69777f04f34" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-fc4d8212-bf23-4703-9153-3121cf15189c" name="" navigability="" association-type="association" visibility="private" />
             </relation>
           </item>
           <item id="97fd87358aa448328437d7a88b43b5a7" cid="CPT008" type="component" name="Store" style-class="" change-tracking-state="added" creator="" creation-date="03/15/2023 16:47:19" visibility="undefined">
@@ -1047,21 +1057,21 @@
           <item id="48d87ac819e34ef0afea9bec5be24bbe" cid="ELEM001" type="uml-required-interface-connector" name="" style-class="" change-tracking-state="added" creator="" creation-date="03/15/2023 16:49:11" from="a40b62b78da64bb7af909b9ca8226697" to="2db8845e1a8943dcad9f4835a362f934" />
           <item id="10125316fa374686859d05ae300e331f" cid="REL009" type="relationship" name="" style-class="" change-tracking-state="added" creator="" creation-date="03/15/2023 16:49:24" from="a40b62b78da64bb7af909b9ca8226697" to="9a0a794124ff488090adc60912023ea9" visibility="package">
             <relation from="a40b62b78da64bb7af909b9ca8226697" to="9a0a794124ff488090adc60912023ea9" derived="false">
-              <start-role id="umlar-78778efb-d50a-4f91-bb35-a02d03238085" name="" navigability="" association-type="association" visibility="private" />
-              <end-role id="umlar-439b4afa-90f7-428c-bf07-31ff3b16f444" name="" navigability="" association-type="association" visibility="private" />
+              <start-role id="umlar-e86dd40f-f52f-496d-8075-495a6892d709" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-113d340b-2f6e-4543-be70-ac23438d90b2" name="" navigability="" association-type="association" visibility="private" />
             </relation>
           </item>
           <item id="dae9435a9e3245bd98b7a986f2abe0ad" cid="ELEM003" type="uml-required-interface-connector" name="" style-class="" change-tracking-state="added" creator="" creation-date="03/15/2023 16:49:33" from="9a0a794124ff488090adc60912023ea9" to="b146b53088984d749dc2e75a0358ab6d" />
           <item id="7c80b6055e45400e9bdbc47503d2c2e2" cid="REL012" type="relationship" name="" style-class="" change-tracking-state="added" creator="" creation-date="03/15/2023 16:50:44" from="9a0a794124ff488090adc60912023ea9" to="760acb4a6dca4441afc2448960988a1f" visibility="package">
             <relation from="9a0a794124ff488090adc60912023ea9" to="760acb4a6dca4441afc2448960988a1f" derived="false">
-              <start-role id="umlar-9cb7c1a4-7e64-4b8f-8634-e25a6d1a612e" name="" navigability="" association-type="association" visibility="private" />
-              <end-role id="umlar-3c902497-8d6a-4553-a68c-7123b71b278e" name="" navigability="" association-type="association" visibility="private" />
+              <start-role id="umlar-37f2a20b-d91c-41d6-8c5a-30874b5ef2af" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-8dbb7678-13b5-4a8e-8f82-c8ffbfa78086" name="" navigability="" association-type="association" visibility="private" />
             </relation>
           </item>
           <item id="9fc1ad3a1fb8493095c034f5a34d934f" cid="REL013" type="relationship" name="" style-class="" change-tracking-state="added" creator="" creation-date="03/15/2023 16:50:48" from="760acb4a6dca4441afc2448960988a1f" to="15651e3906eb49f98f9f588056f55093" visibility="package">
             <relation from="760acb4a6dca4441afc2448960988a1f" to="15651e3906eb49f98f9f588056f55093" derived="false">
-              <start-role id="umlar-ae7fb915-5137-4c21-a904-b9d18b550051" name="" navigability="" association-type="association" visibility="private" />
-              <end-role id="umlar-26fa25b9-6a1f-47fc-b55d-396b1136b2dc" name="" navigability="" association-type="association" visibility="private" />
+              <start-role id="umlar-4c43c720-a423-47f9-9b93-40a62cc258fd" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-ff6b5002-7b11-400e-a350-d104532acaed" name="" navigability="" association-type="association" visibility="private" />
             </relation>
           </item>
         </abstract-items>
